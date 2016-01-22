@@ -2,10 +2,10 @@
 <widget id="com.wdreams.huesca" version="1.0.0"  versionCode = "100" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Huesca</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        APP de la asociacion de empresarios de comercios y servicios de huesca.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        webDreams
+    <author email="valeria@wdreams.com" href="http://www.wdreams.com">
+        WebDreams
     </author>
     
         <preference name="permissions"                value="none"/>
