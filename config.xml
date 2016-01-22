@@ -57,7 +57,7 @@
 </feature>
 
     <icon src="icon.png" />
-
+		<splash src="screen.png" />
     <!-- iPhone / iPod Touch  -->
 <!--icon src="res/icon/ios/icon-60.png" gap:platform="ios" width="60" height="60" />
 <icon src="res/icon/ios/sicon-60@2x.png" gap:platform="ios" width="120" height="120" />
