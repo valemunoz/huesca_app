@@ -421,7 +421,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	
 }
 #foto1{
-	margin-top:2px !important;
+	margin-top:20px !important;
 	height:auto !important;
 	min-height:100px !important;
 	max-width:40% !important;
@@ -433,7 +433,7 @@ text-align:center;
 
 }
 #foto2{
-	margin-top:2px !important;
+	margin-top:20px !important;
 	height:auto !important;
 	min-height:100px !important;
 	max-width:40% !important;
