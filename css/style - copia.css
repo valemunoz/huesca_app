@@ -1,0 +1,351 @@
+body
+{
+	font-family: "DINPro";
+}
+@font-face {
+font-family: DINPro !important;
+    src: url(DinPro/DINPro-Regular.ttf) format("truetype");
+}
+@font-face {
+font-family: ostrich !important;
+    src: url(ostrich/ostrich-regular_0.ttf) format("truetype");
+}
+#contenido
+{
+	height:98% !important;	
+ 	overflow-y: auto !important;
+ 	/*position:absolute !important;*/
+}
+
+.body_inicio {
+	
+	
+background: url("../img/fondo.png")  no-repeat fixed center !important;
+ background:no-repeat !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+   background-size: auto !important;
+   position:absolute;
+}
+#fondo
+{
+	
+	width:100% !important;
+	overflow-y: auto !important;
+	
+	
+}
+#header_fondo
+{
+		height:70px !important;
+	  background: url("../img/fondo_cabecera.jpg");
+    background-repeat: repeat-x;
+    background-size:70px !important; 
+    
+}
+.link_reg
+{
+	float:right !important;
+	color:#C95649 !important;
+	 text-decoration:none;   
+}
+#div_logo
+{
+	
+	width:98% !important;
+	position:relative;
+}
+#div_centro
+{
+	position:relative;
+	margin-top:10% !important;
+	height:140px !important;
+	width:80% !important;
+	background-color: #EAEAEB !important;
+	margin:0 auto;
+	color: #770042 !important;
+	font-size:12px !important;
+	font-weight:bold;
+	padding:15px;
+	
+}
+@media (max-width: 250px) and (min-width: 0px) {
+	.li_a
+{
+	background-color: #2ACCCE !important;
+	color:#ffffff !important;
+	font-size:40% !important;
+	font-family: "ostrich";
+
+}
+.li_b
+{
+	background-color: #6D0135 !important;
+	color:#ffffff !important;
+	font-size:40% !important;
+	font-family: "ostrich";
+}
+}
+@media (max-width: 500px) and (min-width: 251px) {
+	.li_a
+{
+	background-color: #2ACCCE !important;
+	color:#ffffff !important;
+	font-size:45% !important;
+	font-family: "ostrich";
+
+}
+.li_b
+{
+	background-color: #6D0135 !important;
+	color:#ffffff !important;
+	font-size:45% !important;
+	font-family: "ostrich";
+}
+}
+@media (min-width: 501px) {
+	.li_a
+{
+	background-color: #2ACCCE !important;
+	color:#ffffff !important;
+	font-size:80% !important;
+	font-family: "ostrich";
+
+}
+.li_b
+{
+	background-color: #6D0135 !important;
+	color:#ffffff !important;
+	font-size:80% !important;
+	font-family: "ostrich";
+}
+}
+
+
+#foot_page
+{
+	background-color: #ffffff !important;
+	text-align:right !important;
+	font-family: "ostrich";
+src: url('ostrich/ostrich-light.ttf') !important;
+
+
+}
+.li_opaco
+{
+		filter:alpha(opacity=50);
+		-moz-opacity: 0.5;
+		opacity: 0.5;
+}
+#titulo_div
+{
+	margin-top:5% !important;
+	height:35px !important;
+width:60% !important;
+	
+	background-color: #770042 !important;
+	margin-left:10px;
+	color: #ffffff !important;
+	font-size:10px !important;
+	font-weight:bold;
+	padding:3px;
+	padding-right: 10px;
+	text-align:right !important;
+	line-height: 3em;
+	
+}
+#div_formulario
+{
+	position:relative;
+	margin-top:5% !important;
+	height:auto !important;
+	min-height:370px !important;
+	width:80% !important;
+	background-color: #EAEAEB !important;
+	margin:0 auto;
+	color: #770042 !important;
+	font-size:12px !important;	
+	padding:10px;
+	text-align:left !important;
+	font-weight:bold;  
+}
+.input_form
+{
+	
+	height:50px;
+	
+	color:#9A9999;
+	background-color:ffffff !important;
+	border: 1px solid #9A9999 !important;
+	margin:0 auto !important;
+	
+}
+
+.al_right
+{
+	float:right !important;
+}
+.boton_css
+{
+	background-color: #C50119 !important;
+	color:white;
+	font-size:15px !important
+	font-weight:bold;  
+  height: 40px;  
+  min-width: 90px;
+  width: 30%;
+  text-align:center !important;
+  line-height: 3em;
+  border-radius: 6px;
+  
+}
+
+	@media (max-width: 250px) and (min-width: 0px) {
+    	#div_login
+			{
+    		margin: 0 auto !important;
+				height:250px !important;	
+				width:90% !important;		
+				height:250px !important;
+	  		background: url("../img/fondo_login.png");
+    		background-repeat: no-repeat;
+    		background-size: 250px !important; 
+    	
+    }
+  }
+    @media (max-width: 500px) and (min-width: 251px) {
+    	#div_login
+			{
+    		margin: 0 auto !important;
+				height:300px !important;	
+				width:200px !important;						
+	  		background: url("../img/fondo_login.png");
+    		background-repeat: no-repeat;
+    		background-size: 200px 300px !important; 
+    }
+	}
+	@media (min-width: 501px) {
+    	#div_login
+			{
+    		margin: 0 auto !important;
+				height:350px !important;	
+				width:400px !important;						
+	  		background: url("../img/fondo_login.png");
+    		background-repeat: no-repeat;
+    		background-size: 400px 350px !important; 
+    	
+    }
+	}
+
+.boton_css_ch
+{
+	background-color: #C50119 !important;
+	color:white;
+	font-size:15px !important
+	font-weight:bold;  
+  height: 25px;  
+  min-width: 90px;
+  width: 30%;
+  text-align:center !important;
+  line-height: 3em;
+  border-radius: 6px;
+  
+}
+#div_form
+{
+	position:relative;
+	padding:10px;
+	width:70% !important;
+	text-align:center;
+	margin:0 auto !important;
+}
+.input_form2
+{
+	
+	height:17% !important;		
+	color:#9A9999;
+	font-size:70% !important;
+	background-color:ffffff !important;
+	border: 1px solid #9A9999 !important;
+	margin:0 auto !important;
+	
+}
+
+
+#barra_izq
+{
+	float:left;
+}
+#barra_der
+{
+	float:right !important;
+	color:#CC707A;
+}
+#titulo_div2
+{
+	margin-top:5% !important;
+	height:35px !important;
+	width:60% !important;	
+	background-color: #770042 !important;
+	margin-left:10px;
+	color: #ffffff !important;
+	font-size:12px !important;
+	font-weight:bold;
+	padding:3px;
+	padding-right: 10px;
+	text-align:right !important;
+	line-height: 3em;
+	
+}
+@media (max-width: 250px) and (min-width: 0px) {
+    	#barra_sup
+{
+	height:20px !important;
+	font-size:10px;
+	color: #9A9999;
+	font-weight:normal;
+}
+  }
+    @media (max-width: 500px) and (min-width: 251px) {
+    	#barra_sup
+{
+	height:20px !important;
+	font-size:12px;
+	color: #9A9999;
+	font-weight:normal;
+}
+	}
+	@media (min-width: 501px) {
+    	#barra_sup
+{
+	height:20px !important;
+	font-size:15px;
+	color: #9A9999;
+	font-weight:normal;
+}
+	}
+	
+#div_ofertas
+{
+	position:relative;
+	margin-top:5% !important;
+	height:auto !important;
+	min-height:100px !important;
+	width:80% !important;
+	background-color: #EAEAEB !important;
+	float:left;
+	margin-left: 5%;
+	font-family: "DINPro";
+	font-size:12px !important;	
+	padding:10px;
+	text-align:left !important;
+	font-weight:bold;  
+}	
+#span_txt
+{
+	position:absolute;
+	float:left;
+	margin-top:45px;
+	margin-left:15px;
+}
