@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>Huesca</title>
+        <link rel="shortcut icon" href="images/icon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+				<meta name="author" content="Chilemap.cl" />     
+         <link rel="stylesheet" href="css/themes/themes.css" />
+  			<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.0-rc.1.min.css" />
+                
+        <script src="cordova.js"></script>
+       
+        <script src="js/jquery-1.10.2.min.js"></script> 
+				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
+				
+				<script src="js/funciones.js"></script>
+				
+        <link rel="stylesheet" href="css/style.mobile.css" type="text/css">
+        <link rel="stylesheet" href="css/style.mobile-jq.css" type="text/css">
+   			      <link rel="stylesheet" href="css/style.css" />
+   			
+<script>
+
+//document.addEventListener("offline", onready, false);
+//document.addEventListener("online", onready, false);
+document.addEventListener("deviceready", deviceListo, false);
+
+</script>
+    </head>
+    <body>
+    <div data-role="page" id="mappage" data-theme="a">
+		    
+   		
+   		
+   	  <div data-role="content" id="contenido" >
+   	  <div id="header_fondo"></div>	
+    	  	<div data-role="popup" id="myPopup">
+							<p>This is a completely basic popup, no options set.						</p>
+					</div>
+				
+				<img src="img/fondo.png" class="body_inicio">
+				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
+						  		
+						  			<span id="barra_izq">Bienvenido Marta Gutierrez </span>
+						  			<span id="barra_der">Cerrar Sesion<img width=13% src="img/login.png"></span>
+						  		
+						  		
+								</div>
+				<div id="fondo">
+					
+					<div id="titulo_div">
+						OFERTAS
+					</div>
+					<div id="div_ofertas">
+						<div id="left_img"><img class="img_alerta" src="img/mensaje_alerta.png"> </div>
+						<div id="rig_img">Dispone<strong> 3 ofertas</strong> nuevas sin vizualizar</div>
+					</div>
+
+<div id="titulo_div">
+						COMERCIOS
+					</div>
+					<div id="div_ofertas">
+						<div id="left_img"><img  class="img_alerta" src="img/mensaje_alerta.png"> </div>
+						<div id="rig_img">Dispone<strong> 2 comercios del dia</strong> nuevos sin vizualizar</div>
+					</div>
+					
+					
+					</div>
+			
+                 
+    	</div>
+    	 	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
+    		
+<div data-role="navbar">
+		<ul>
+			<li><a class='li_a' href="comercio.html"><img width=50px src="img/comercio_dia.png"><br><br>COMERCIO<br>DEL D&Igrave;A</a></li>
+			<li><a class='li_b' href="a.html"><img width=50px src="img/ofertas.png"><br><br>OFERTA<br>DEL D&Igrave;A</a></li>
+			<li><a class='li_a' href="a.html"><img width=50px src="img/comercios.png"><br><br>COMERCIOS<br>ASOCIADOS</a></li>
+			<li><a class='li_b' href="a.html"><img width=50px src="img/mapa.png"><br><br>MAPA<br><br></a></li>
+			<li><a class='li_a' href="a.html"><img width=50px src="img/buscador.png"><br><br><br>BUSCADOR</a></li>	
+		</ul>
+	</div><!-- /navbar -->
+    	<img width=80px src="img/logo_pie_ayto.png">
+</div><!-- /footer -->
+    	
+    	
+    	  
+ </div>
+
+    
+ 		 			<div id=output></div>
+    </body>
+</html>
