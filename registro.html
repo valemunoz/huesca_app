@@ -42,7 +42,7 @@ document.addEventListener("deviceready", deviceListo, false);
 				<img src="img/fondo.png" class="body_inicio">
 				<div id="fondo">
 					<div id="div_logo">
-						<a href="index.html"><img src="img/logo.png" width=30%>	</a>
+						<a href="index.html"><img class="logo_prin" src="img/logo.png" width=30%>	</a>
 					</div>
 					<div id="titulo_div">
 						REGISTRO DE USUARIO
@@ -61,7 +61,9 @@ document.addEventListener("deviceready", deviceListo, false);
     					<option value="1">Masculino</option>
     
 						</select>	
-									
+						<input type="checkbox" name="checkbox-1a" id="checkbox-1a" >
+    				<label for="checkbox-1a">Acepto las condiciones de uso y protecci&oacute;n de datos.</label>
+    				<a href="javascript:openCondiciones();">Leer condiciones</a>
 						<div class="boton_css al_right">REGISTRAR </div>
 					</div>	
 				</div>
@@ -70,13 +72,30 @@ document.addEventListener("deviceready", deviceListo, false);
     	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
     		
 
-    	<img src="img/logo_pie_ayto.png">
+    	<img width=150px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
-    	
+   
     	
     	  
  </div>
+<div data-role="page" id="mod_condiciones" data-theme="a">
 
+   			<div data-role="header" class="header_int">
+	   			
+      		
+   		</div>   
+   	  <div data-role="content" id="contenido_int" >
+   	  	
+    	  	<p class="p_int">
+    	  		De conformidad con la Ley Org&aacute;nica 15/1999 de Protecci&oacute;n de Datos Personales y a trav&eacute;s de la cumplimentaci&oacute;n del presente formulario, Ud. presta su consentimiento para el tratamiento de sus datos personales facilitados que ser&aacute;n incorporados a un fichero, cuyo responsable es la ASOCIACI&Oacute;N DE EMPRESARIOS DE COMERCIO DE HUESCA, inscrita en el Registro General de la Agencia de Protecci&oacute;n de datos, cuya finalidad es facilitar la gesti&oacute;n administrativa de los servicios que la asociaci&oacute;n pone a disposici&oacute;n de sus asociados. As&iacute; mismo, podr&aacute;n ser cedidos a terceros siempre y cuando, sirva para mejorar la prestaci&oacute;n de servicios de la ASOCIACI&Oacute;N.<br>
+
+						<br>Igualmente le informamos que podr&aacute; ejercer los derechos de acceso, rectificaci&oacute;n cancelaci&oacute;n y oposici&oacute;n establecidos en dicha ley a trav&eacute;s de carta certificada, adjuntando fotocopia de su DNI/Pasaporte, en la siguiente direcci&oacute;n; Plaza Lu&iacute;s L&oacute;pez Allu&eacute;, 3,1º. 22001 - Huesca.
+
+    	  	</p>
+					
+    	</div>
+    	  
+ 		</div> 	
     
  		 			<div id=output></div>
     </body>
