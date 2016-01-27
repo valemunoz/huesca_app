@@ -29,6 +29,7 @@ document.addEventListener("deviceready", deviceListo, false);
 </script>
     </head>
     <body>
+    	
     <div data-role="page" id="mappage" data-theme="a">
 		    
    		
@@ -50,8 +51,11 @@ document.addEventListener("deviceready", deviceListo, false);
 					</div>
 
 					<div id="div_formulario">
+						<span>NOMBRE</span>
 						<input class=input_form  type="text" id="nombre" name="nombre" value="" placeholder="NOMBRE">
+						<span>APELLIDOS</span>
 						<input class=input_form  type="text" id="apps" name="apps" value="" placeholder="APELLIDOS">
+						<span>EMAIL</span>
 						<input class=input_form  type="text" id="apps" name="apps" value="" placeholder="EMAIL">
 						<span>FECHA NACIMIENTO</span>
 						<input type="date" class=input_form name="date" id="date" value="" placeholder="FECHA NACIMIENTO">
@@ -63,8 +67,9 @@ document.addEventListener("deviceready", deviceListo, false);
 						</select>	
 						<input type="checkbox" name="checkbox-1a" id="checkbox-1a" >
     				<label for="checkbox-1a">Acepto las condiciones de uso y protecci&oacute;n de datos.</label>
-    				<a href="javascript:openCondiciones();">Leer condiciones</a>
+    				<a href="#mod_condiciones" data-rel="dialog" data-transition="pop">Leer condiciones</a>
 						<div class="boton_css al_right">REGISTRAR </div>
+					
 					</div>	
 				</div>
                  
@@ -87,7 +92,7 @@ document.addEventListener("deviceready", deviceListo, false);
    	  <div data-role="content" id="contenido_int" >
    	  	
     	  	<p class="p_int">
-    	  		De conformidad con la Ley Org&aacute;nica 15/1999 de Protecci&oacute;n de Datos Personales y a trav&eacute;s de la cumplimentaci&oacute;n del presente formulario, Ud. presta su consentimiento para el tratamiento de sus datos personales facilitados que ser&aacute;n incorporados a un fichero, cuyo responsable es la ASOCIACI&Oacute;N DE EMPRESARIOS DE COMERCIO DE HUESCA, inscrita en el Registro General de la Agencia de Protecci&oacute;n de datos, cuya finalidad es facilitar la gesti&oacute;n administrativa de los servicios que la asociaci&oacute;n pone a disposici&oacute;n de sus asociados. As&iacute; mismo, podr&aacute;n ser cedidos a terceros siempre y cuando, sirva para mejorar la prestaci&oacute;n de servicios de la ASOCIACI&Oacute;N.<br>
+    	  De conformidad con la Ley Org&aacute;nica 15/1999 de Protecci&oacute;n de Datos Personales y a trav&eacute;s de la cumplimentaci&oacute;n del presente formulario, Ud. presta su consentimiento para el tratamiento de sus datos personales facilitados que ser&aacute;n incorporados a un fichero, cuyo responsable es la ASOCIACI&Oacute;N DE EMPRESARIOS DE COMERCIO DE HUESCA, inscrita en el Registro General de la Agencia de Protecci&oacute;n de datos, cuya finalidad es facilitar la gesti&oacute;n administrativa de los servicios que la asociaci&oacute;n pone a disposici&oacute;n de sus asociados.</br> </br>As&iacute; mismo, podr&aacute;n ser cedidos a terceros siempre y cuando, sirva para mejorar la prestaci&oacute;n de servicios de la ASOCIACI&Oacute;N.<br>
 
 						<br>Igualmente le informamos que podr&aacute; ejercer los derechos de acceso, rectificaci&oacute;n cancelaci&oacute;n y oposici&oacute;n establecidos en dicha ley a trav&eacute;s de carta certificada, adjuntando fotocopia de su DNI/Pasaporte, en la siguiente direcci&oacute;n; Plaza Lu&iacute;s L&oacute;pez Allu&eacute;, 3,1º. 22001 - Huesca.
 

@@ -96,3 +96,8 @@ function marcadorGoogle(lon,lat,texto)
     infowindow.open(map, marker);
   });
 }
+function loadRegistro()
+{
+	window.location.href='registro.html';
+	
+}
