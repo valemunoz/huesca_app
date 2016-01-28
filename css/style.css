@@ -174,6 +174,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	margin-left:10px;
 	color: #ffffff !important;
 	font-size:10px !important;
+	
 	padding:3px;
 	padding-right: 10px;
 	text-align:left !important;
@@ -193,9 +194,6 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	margin-top:5% !important;
 	height:35px !important;
 	width:80% !important;
-	
-	
-	
 	margin-left:10px;
 	color: #ffffff !important;
 	font-size:12px !important;
@@ -251,6 +249,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
   height: 40px;  
   min-width: 90px;
   width: 30%;
+  text-decoration:none !important;
   text-align:center !important;
   line-height: 3.1em;
   
@@ -265,6 +264,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
   height: 40px;  
   min-width: 90px;
   width: 30%;
+  text-decoration:none !important;
   text-align:center !important;
   line-height: 2.6em;
   
@@ -274,6 +274,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	@media (max-width: 250px) and (min-width: 0px) {
     	#div_login
 			{
+				opacity: 0.99 !important;
     		margin: 0 auto !important;
 				height:250px !important;	
 				width:90% !important;		
@@ -281,30 +282,34 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	  		background: url("../img/fondo_login.png");
     		background-repeat: no-repeat;
     		background-size: 250px !important; 
+    		position:relative;
     	
     }
   }
     @media (max-width: 500px) and (min-width: 251px) {
     	#div_login
 			{
+				opacity: 0.99 !important;
     		margin: 0 auto !important;
 				height:300px !important;	
 				width:200px !important;						
 	  		background: url("../img/fondo_login.png");
     		background-repeat: no-repeat;
     		background-size: 200px 300px !important; 
+    		position:relative;
     }
 	}
 	@media (min-width: 501px) {
     	#div_login
 			{
+				opacity: 0.99 !important;
     		margin: 0 auto !important;
 				height:350px !important;	
 				width:400px !important;						
 	  		background: url("../img/fondo_login.png");
     		background-repeat: no-repeat;
     		background-size: 400px 350px !important; 
-    	
+    		position:relative;
     }
 	}
 
@@ -388,7 +393,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
     	#barra_sup
 {
 	height:20px !important;
-	font-size:12px;
+	font-size:11px !important;
 	color: #9A9999;
 	font-weight:normal;
 }
@@ -397,7 +402,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
     	#barra_sup
 {
 	height:20px !important;
-	font-size:15px;
+	font-size:14px;
 	color: #9A9999;
 	font-weight:normal;
 }
@@ -486,7 +491,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	margin-top:2px !important;
 	height:auto !important;
 	min-height:100px !important;
-	width:80% !important;
+	/*width:80% !important;*/
 	margin-left: 5%;
 	
 	font-size:15px !important;	
