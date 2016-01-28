@@ -163,55 +163,31 @@ src: url('ostrich/ostrich-light.ttf') !important;
 		-moz-opacity: 0.5 !important;
 		opacity: 0.5 !important;
 }
-
-@media (max-width: 250px) and (min-width: 0px) {
+@media (max-width: 500px) and (min-width: 0px)
+{
 #titulo_div
 {
 	opacity: 0.99 !important;
 	margin-top:5% !important;
-	height:35px !important;
-	width:80% !important;
-	
-	
-	
-	margin-left:10px;
-	color: #ffffff !important;
-	font-size:9px !important;
-	
-	padding:3px;
-	padding-right: 10px;
-	text-align:left !important;
-	line-height: 2.6em;
-	background: url("../img/h1.png");
-    		background-repeat: no-repeat;
-    		background-size:  80% 35px !important; 
-	
-}
-  }
-  
-  @media (max-width: 500px) and (min-width: 251px) {
-#titulo_div
-{
-	opacity: 0.99 !important;
-	margin-top:5% !important;
-	height:35px !important;
-	width:90% !important;
+	height:50px !important;
+	width:95% !important;
 	margin-left:10px;
 	color: #ffffff !important;
 	font-size:10px !important;
-	
 	padding:3px;
 	padding-right: 10px;
 	text-align:left !important;
 	line-height: 2.6em;
 	background: url("../img/h1.png");
     		background-repeat: no-repeat;
-    		background-size:  80% 35px !important; 
+    		background-size:  95% 50px !important; 
 	
 }
-  }
-    @media (min-width: 501px) {
-    	#titulo_div
+}
+
+@media  (min-width: 501px)
+{
+#titulo_div
 {
 	opacity: 0.99 !important;
 	margin-top:5% !important;
@@ -233,7 +209,8 @@ src: url('ostrich/ostrich-light.ttf') !important;
     		background-size:  80% 35px !important; 
 	
 }
-	}
+}
+
 #div_formulario
 {
 	position:relative;
@@ -312,7 +289,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 			{
     		margin: 0 auto !important;
 				height:300px !important;	
-				width:300px !important;						
+				width:200px !important;						
 	  		background: url("../img/fondo_login.png");
     		background-repeat: no-repeat;
     		background-size: 200px 300px !important; 
@@ -425,27 +402,8 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	font-weight:normal;
 }
 	}
-@media (max-width: 250px) and (min-width: 0px) {
+	
 #div_ofertas
-{
-	
-	margin-top:5% !important;
-	height:auto !important;
-	min-height:100px !important;
-	width:80% !important;
-	background-color: #EAEAEB !important;
-	
-	margin-left: 5%;
-	
-	font-size:10px !important;	
-	padding:10px;
-	text-align:left !important;
-	font-weight:bold;  
-	opacity: 0.99 !important;
-}	
-}
-@media (max-width: 500px) and (min-width: 251px) {
-	#div_ofertas
 {
 	
 	margin-top:5% !important;
@@ -462,9 +420,6 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	font-weight:bold;  
 	opacity: 0.99 !important;
 }	
-
-}
-	
 #span_txt
 {
 	
@@ -478,14 +433,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	padding: 1% !important;
 	margin-top: 24px !important;
 }
-#rig_img
-{
-	
-	padding: 1% !important;
-	margin-top: 35px !important;
-	font-weight:bold;
-	font-size:14px !important;
-}
+
 
 @media (max-width: 500px) and (min-width: 0px) {
 	.img_alerta
@@ -493,13 +441,28 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	width:50% !important;
 	
 }
-    	
+#rig_img
+{
+	
+	padding: 1% !important;
+	margin-top: 35px !important;
+	font-weight:bold;
+	font-size:11px !important;
+}    	
 	}
 	@media (min-width: 501px) {
     	.img_alerta
 			{
 				width:80% !important;
 			}
+			#rig_img
+{
+	
+	padding: 1% !important;
+	margin-top: 35px !important;
+	font-weight:bold;
+	font-size:14px !important;
+}
 	}
 
 #left_cont
