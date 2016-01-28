@@ -176,6 +176,28 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	
 	margin-left:10px;
 	color: #ffffff !important;
+	font-size:9px !important;
+	
+	padding:3px;
+	padding-right: 10px;
+	text-align:left !important;
+	line-height: 2.6em;
+	background: url("../img/h1.png");
+    		background-repeat: no-repeat;
+    		background-size:  80% 35px !important; 
+	
+}
+  }
+  
+  @media (max-width: 500px) and (min-width: 251px) {
+#titulo_div
+{
+	opacity: 0.99 !important;
+	margin-top:5% !important;
+	height:35px !important;
+	width:90% !important;
+	margin-left:10px;
+	color: #ffffff !important;
 	font-size:10px !important;
 	
 	padding:3px;
@@ -188,7 +210,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	
 }
   }
-    @media (max-width: 500px) and (min-width: 251px) {
+    @media (min-width: 501px) {
     	#titulo_div
 {
 	opacity: 0.99 !important;
@@ -200,7 +222,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	
 	margin-left:10px;
 	color: #ffffff !important;
-	font-size:8px !important;
+	font-size:12px !important;
 	
 	padding:3px;
 	padding-right: 10px;
@@ -290,7 +312,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 			{
     		margin: 0 auto !important;
 				height:300px !important;	
-				width:250px !important;						
+				width:300px !important;						
 	  		background: url("../img/fondo_login.png");
     		background-repeat: no-repeat;
     		background-size: 200px 300px !important; 
