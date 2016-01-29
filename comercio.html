@@ -11,11 +11,10 @@
         <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.0-rc.1.min.css" />
                 
         <script src="cordova.js"></script>
-       
-        <script src="js/jquery-1.10.2.min.js"></script> 
-				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
-				
 				<script src="js/funciones.js"></script>
+				<script src="js/jquery-1.10.2.min.js"></script> 
+				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
+				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 				
         <link rel="stylesheet" href="css/style.mobile.css" type="text/css">
         <link rel="stylesheet" href="css/style.mobile-jq.css" type="text/css">
@@ -73,8 +72,8 @@ cliente.<br><br>
 						<div id="rig_cont"><img width=100px src="img/mensaje_alerta.png"></div>
 					</div>
 				
-					<div id="foto1"><img class=img_com src="img/GOPR0601.JPG"></div>
-					<div id="foto2"><img class=img_com src="img/GOPR0601.JPG"></div>
+					<div id="foto1"><img class=img_com src="img/GOPR0601.png"></div>
+					<div id="foto2"><img class=img_com src="img/GOPR0601.png"></div>
 					<div id="espacio"><br>
 						
 					</div>
@@ -90,11 +89,11 @@ cliente.<br><br>
     	 	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
     		<div data-role="navbar">
 		<ul>
-			<li><a class='li_a' href="comercio.html"><img width=50px src="img/comercio_dia.png"></a></li>
-			<li><a class='li_b' href="lista_ofertas.html"><img width=50px src="img/ofertas.png"></a></li>
-			<li><a class='li_a' href="comercios_asociados.html"><img width=50px src="img/comercios.png"></a></li>
-			<li><a class='li_b' href="mapa.html"><img width=50px src="img/mapa.png"></a></li>
-			<li><a class='li_a' href="buscador.html"><img width=50px src="img/buscador.png"></a></li>	
+			<li><a class='li_a' href="comercio.html" data-transition="flow"><img width=50px src="img/comercio_dia.png"></a></li>
+			<li><a class='li_b' href="lista_ofertas.html" data-transition="flow"><img width=50px src="img/ofertas.png"></a></li>
+			<li><a class='li_a' href="comercios_asociados.html" data-transition="flow"><img width=50px src="img/comercios.png"></a></li>
+			<li><a class='li_b' href="javascript:loadMapa();"><img width=50px src="img/mapa.png"></a></li>
+			<li><a class='li_a' href="buscador.html" data-transition="flow"><img width=50px src="img/buscador.png"></a></li>	
 		</ul>
 	</div><!-- /navbar -->
 

@@ -30,7 +30,8 @@ function openCondiciones()
 	
 	$.mobile.changePage('#mod_condiciones', {transition: 'pop', role: 'dialog'});
 }
-function initMap() {
+function initMap() 
+{
 	
 	
   // Create a map object and specify the DOM element for display.
@@ -42,6 +43,7 @@ function initMap() {
   
   //currentLocation();
   marcadorGoogle(-0.409196,42.135587,'Nombre comercio');
+  $.mobile.loading( 'hide');
 }
 function currentLocation()
 {
@@ -66,7 +68,9 @@ function currentLocation()
  
 function loadMapa()
 {
-	window.location.href='mapa.html';
+	//window.location.href='mapa.html';
+	$.mobile.changePage('mapa.html', {transition: 'flow',reverse: true,
+  changeHash: true });
 	
 }
 function marcadorGoogle(lon,lat,texto)
@@ -100,4 +104,9 @@ function loadRegistro()
 {
 	window.location.href='registro.html';
 	
+}
+function validaLogin()
+{
+	
+	window.location.href='logeado.html';
 }

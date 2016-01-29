@@ -3,37 +3,40 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <title>Huesca</title>
         <link rel="shortcut icon" href="images/icon.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no; target-densityDpi=device-dpi"/>
         <meta name="apple-mobile-web-app-capable" content="yes">
 				<meta name="author" content="Chilemap.cl" />     
          <link rel="stylesheet" href="css/themes/themes.css" />
   			<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
         <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.0-rc.1.min.css" />
                 
-        <script src="cordova.js"></script>
-       
-        <script src="js/jquery-1.10.2.min.js"></script> 
-				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
-				
-				<script src="js/funciones.js"></script>
+        <script src="cordova.js"></script>       
+        <script src="js/funciones.js"></script>
+				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+				<script src="js/jquery-1.10.2.min.js"></script> 
+				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 				
 				
         <link rel="stylesheet" href="css/style.mobile.css" type="text/css">
         <link rel="stylesheet" href="css/style.mobile-jq.css" type="text/css">
    			      <link rel="stylesheet" href="css/style.css" />
    			      <!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtr4GzcqpxpviZWNnAbYVgqm8mXfQJIvk&callback=initMap2&sensor=false"></script-->
-   			      <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+   			      
 							<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
- 
    			
 <script>
-
+$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
 //document.addEventListener("offline", onready, false);
 //document.addEventListener("online", onready, false);
 document.addEventListener("deviceready", deviceListo, false);
 
 </script>
     </head>
-    <body onload="initMap();">
+    <body>
     <div data-role="page" id="mappage" data-theme="a">
 		    
    		
@@ -74,23 +77,26 @@ document.addEventListener("deviceready", deviceListo, false);
     	 	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
     		<div data-role="navbar">
 		<ul>
-			<li><a class='li_a' href="comercio.html"><img width=50px src="img/comercio_dia.png"></a></li>
-			<li><a class='li_b' href="lista_ofertas.html"><img width=50px src="img/ofertas.png"></a></li>
-			<li><a class='li_a' href="comercios_asociados.html"><img width=50px src="img/comercios.png"></a></li>
-			<li><a class='li_b' href="mapa.html"><img width=50px src="img/mapa.png"></a></li>
-			<li><a class='li_a' href="buscador.html"><img width=50px src="img/buscador.png"></a></li>	
+		<li><a class='li_a' href="comercio.html" data-transition="flow"><img width=50px src="img/comercio_dia.png"></a></li>
+			<li><a class='li_b' href="lista_ofertas.html" data-transition="flow"><img width=50px src="img/ofertas.png"></a></li>
+			<li><a class='li_a' href="comercios_asociados.html" data-transition="flow"><img width=50px src="img/comercios.png"></a></li>
+			<li><a class='li_b' href="javascript:loadMapa();"><img width=50px src="img/mapa.png"></a></li>
+			<li><a class='li_a' href="buscador.html" data-transition="flow"><img width=50px src="img/buscador.png"></a></li>	
 		</ul>
 	</div><!-- /navbar -->
 
     	<img width=150px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
     	
-    	
+    	<script>
+ 		 				setTimeout("initMap();",500);
+ 		 				</script>
     	  
  </div>
 
     
  		 			<div id=output></div>
+ 		 			
     </body>
 </html>
 

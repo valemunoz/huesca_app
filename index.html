@@ -14,8 +14,9 @@
        
         <script src="js/jquery-1.10.2.min.js"></script> 
 				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
-				
+				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 				<script src="js/funciones.js"></script>
+				
 				
         <link rel="stylesheet" href="css/style.mobile.css" type="text/css">
         <link rel="stylesheet" href="css/style.mobile-jq.css" type="text/css">
@@ -39,7 +40,7 @@ document.addEventListener("deviceready", deviceListo, false);
 				<img src="img/fondo.png" class="body_inicio">
 				<div id="fondo">
 					<div id="div_logo">
-						<img class="logo_prin" src="img/logo.png" width=40%><a class="link_reg2" href="sesion.html" >Iniciar Sesión </a><a class="link_reg" href="javascript:loadRegistro();" >&#47;&#32;Registro<img src="img/login.png"></a>
+						<img class="logo_prin" src="img/logo.png" width=40%><a class="link_reg2" href="sesion.html" >Iniciar Sesión | </a><a class="link_reg" href="javascript:loadRegistro();" >Registro<img src="img/login.png"></a>
 					</div>
 					<div id="div_centro">
 						BIENVENIDO A LA APP DE COMERCIO DE HUESCA:<BR>
@@ -57,11 +58,11 @@ document.addEventListener("deviceready", deviceListo, false);
     		
 			<div data-role="navbar">
 				<ul>
-						<li><a class='li_a li_opaco' href="comercio.html"><img width=50px src="img/comercio_dia.png"></a></li>
-			<li><a class='li_b li_opaco' href="lista_ofertas.html"><img width=50px src="img/ofertas.png"></a></li>
-			<li><a class='li_a' href="comercios_asociados.html"><img width=50px src="img/comercios.png"></a></li>
+				<li><a class='li_a li_opaco' ><img width=50px src="img/comercio_dia.png"></a></li>
+			<li><a class='li_b li_opaco' ><img width=50px src="img/ofertas.png"></a></li>
+			<li><a class='li_a' href="comercios_asociados.html" data-transition="flow"><img width=50px src="img/comercios.png"></a></li>
 			<li><a class='li_b' href="javascript:loadMapa();"><img width=50px src="img/mapa.png"></a></li>
-			<li><a class='li_a' href="buscador.html"><img width=50px src="img/buscador.png"></a></li>	
+			<li><a class='li_a' href="buscador.html" data-transition="flow"><img width=50px src="img/buscador.png"></a></li>	
 				</ul>
 			</div><!-- /navbar -->
     	<img width=150px src="img/logo_pie_ayto.png">

@@ -1,23 +1,14 @@
-@font-face {
-    font-family: 'dinpro';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fuentes/dinpro-regular.ttf');
-}
 
 @font-face {
-    font-family: 'dinproIE';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fuentes/dinpro-regular.eot');
-}
-@font-face {
-font-family: ostrich !important;
-    src: url(ostrich/OstrichSans-Medium.ttf) format("truetype");
-}
-body .ui-body-c
+    font-family: "dinp";
+    src: url("./dinpro/dinpro-regular.ttf") format("opentype");   
+        /* Make sure you defined the correct path, which is related to
+            the location of your file `my_css.css` */ 
+    }
+
+body, input, select, textarea, button, .ui-btn
 {
-	font-family: "dinpro", "dinproIE" !important;
+	font-family: "dinp" !important;
 }
 #contenido
 {
@@ -57,7 +48,7 @@ background: url("../img/fondo.png")  no-repeat fixed center !important;
 .link_reg {
     color: #c95649 !important;
     float: right !important;
-    margin-right: -194px;
+    margin-right: -210px;
     margin-top: -1px;
     text-decoration: none;
 }
@@ -169,7 +160,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 {
 	opacity: 0.99 !important;
 	margin-top:5% !important;
-	height:50px !important;
+	height:45px !important;
 	width:95% !important;
 	margin-left:10px;
 	color: #ffffff !important;
@@ -177,11 +168,12 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	
 	padding:3px;
 	padding-right: 10px;
+	
 	text-align:left !important;
-	line-height: 2.6em;
+	line-height: 3.3em;
 	background: url("../img/h1.png");
     		background-repeat: no-repeat;
-    		background-size:  95% 50px !important; 
+    		background-size:  95% 45px !important; 
 	
 }
 }
@@ -196,8 +188,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	width:80% !important;
 	margin-left:10px;
 	color: #ffffff !important;
-	font-size:12px !important;
-	
+	font-size:12px !important;	
 	padding:3px;
 	padding-right: 10px;
 	text-align:left !important;
@@ -672,3 +663,29 @@ position:relative;
 	height:50% !important;
 	
 }
+.titulo_oferta{
+		color:#770042;
+		font-weight:bold;
+		text-transform:uppercase;
+		font-size:20px;
+		float:left
+		
+		}
+		
+		.evalucacion{
+			float:right;
+			 
+			}
+			
+					
+		.flota_der_oferta{
+			float:right; text-align: right;
+    	width: 20%;
+			 
+			}
+			.precio_antes{
+				
+				text-decoration:line-through;}
+				
+				.precio_despues{color:#770042;
+		font-weight:bold;}
