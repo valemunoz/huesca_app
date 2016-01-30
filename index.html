@@ -23,6 +23,25 @@
    			      <link rel="stylesheet" href="css/style.css" />
    			
 <script>
+	window.onload = function() {
+    var alto=$("#contenido").height();
+    var ancho=$("#contenido").width();
+ 		$('.body_inicio').css('width',ancho);
+ 		$('.body_inicio').css('height',alto);
+ 		var alto_h=$("#header_fondo").height();
+		/*$('.fondo_h').css('width',ancho);*/
+ 		//$('.fondo_h').css('height',alto_h);
+ 		
+}
+window.onresize = function() {
+        var alto=$("#contenido").height();
+    var ancho=$("#contenido").width();
+ 		$('.body_inicio').css('width',ancho);
+ 		$('.body_inicio').css('height',alto);
+ 		var alto_h=$("#header_fondo").height();
+ 		//$('.fondo_h').css('height',alto_h);
+ 		}
+ 		
 //document.addEventListener("offline", onready, false);
 //document.addEventListener("online", onready, false);
 document.addEventListener("deviceready", deviceListo, false);
@@ -40,7 +59,7 @@ document.addEventListener("deviceready", deviceListo, false);
 				<img src="img/fondo.png" class="body_inicio">
 				<div id="fondo">
 					<div id="div_logo">
-						<img class="logo_prin" src="img/logo.png" width=40%><a class="link_reg2" href="sesion.html" >Iniciar Sesión | </a><a class="link_reg" href="javascript:loadRegistro();" >Registro<img src="img/login.png"></a>
+						<img class="logo_prin" src="img/logo.png" width=40%><a class="link_reg2" href="javascript:loadSesion();" >Iniciar Sesión | </a><a class="link_reg" href="javascript:loadRegistro();" >Registro<img src="img/login.png"></a>
 					</div>
 					<div id="div_centro">
 						BIENVENIDO A LA APP DE COMERCIO DE HUESCA:<BR>

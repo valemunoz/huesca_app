@@ -1,24 +1,5 @@
 var map;
-window.onload = function() {
- 
-    var alto=$("#contenido").height();
-    var ancho=$("#contenido").width();
- 		$('.body_inicio').css('width',ancho);
- 		$('.body_inicio').css('height',alto);
- 		var alto_h=$("#header_fondo").height();
-		/*$('.fondo_h').css('width',ancho);*/
- 		//$('.fondo_h').css('height',alto_h);
- 		
-}
-window.onresize = function() {
-        var alto=$("#contenido").height();
-    var ancho=$("#contenido").width();
- 		$('.body_inicio').css('width',ancho);
- 		$('.body_inicio').css('height',alto);
- 		var alto_h=$("#header_fondo").height();
- 		//$('.fondo_h').css('height',alto_h);
- 		}
- 		
+
 function deviceListo()
 {
 	//alert("paso");
@@ -109,4 +90,25 @@ function validaLogin()
 {
 	
 	window.location.href='logeado.html';
+}
+function loadSesion()
+{
+	window.location.href='sesion.html';
+}
+
+function resizeFondo()
+{
+	       var alto=$("#contenido").height();
+    var ancho=$("#contenido").width();
+ 		$('.body_inicio').css('width',ancho);
+ 		$('.body_inicio').css('height',alto);
+ 		var alto_h=$("#header_fondo").height();
+ 		//$('.fondo_h').css('height',alto_h);
+}
+function loadListaComercio()
+{
+	//window.location.href='mapa.html';
+	$.mobile.changePage('comercios_asociados.html', {transition: 'flow',reverse: true,
+  changeHash: true });
+	
 }
