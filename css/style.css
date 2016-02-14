@@ -634,11 +634,11 @@ margin-top:10px !important;
 .resultado_busquedaL2 {
     margin-left:210px !important;
     padding: 1% !important;;
-    width:60%;
+    width:60% !important;
 }
 .imagen_oferta{ float: left;
     padding: 1%;
-}
+	width:20%;}
 
 .sitio_web {
     background-color: #6d0135;
