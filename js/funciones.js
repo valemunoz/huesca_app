@@ -18,6 +18,8 @@ var COM_DESCRIPCION=Array();
 var COM_LOGO=Array();
 var COM_IMG1=Array();
 var COM_IMG2=Array();
+var IMG_WIDTH=200;
+var IMG_HEIGHT=150;
 function offline()
 {
 	
@@ -50,7 +52,10 @@ function openPopstatic(contenido,tiempo)
 }
 function deviceListoInicio()
 {
-	
+	var ancho=$("#contenido").width();
+	ancho=Math.round((ancho*25)/100);
+	IMG_WIDTH=ancho;
+	IMG_HEIGHT=ancho+10;
 	try
 	{
 		navigator.splashscreen.hide();
@@ -82,6 +87,10 @@ function deviceListo()
 				theme: 'a',
 				html: ""
 			});
+			var ancho=$("#contenido").width();
+	ancho=Math.round((ancho*25)/100);
+	IMG_WIDTH=ancho;
+	IMG_HEIGHT=ancho+10;
 	loadBD();
 	getSesionBD();
 	loadComerciosWS();	
@@ -92,6 +101,11 @@ function deviceListo()
 }
 function deviceListoNoSesion()
 {
+	//alert($("#contenido").width());
+	var ancho=$("#contenido").width();
+	ancho=Math.round((ancho*25)/100);
+	IMG_WIDTH=ancho;
+	IMG_HEIGHT=ancho+10;
 	//alert("paso:dev");
 	$.mobile.loading( 'show', {
 				text: 'Cargando...',
@@ -182,6 +196,7 @@ function initMap()
                            	    marcadorGoogle(_respuesta.resultado[i].gps.longitud,_respuesta.resultado[i].gps.latitud,'<strong>'+_respuesta.resultado[i].nombre.toUpperCase()+'</strong><br>Direcci&oacute;n: '+_respuesta.resultado[i].direccion);
                            	}catch(e){}
                           }
+                          $.mobile.loading( 'hide');	
   });
    //marcadorGoogle(-0.409196,42.135587,'<strong>NOMBRE COMERCIO</strong><br>Direcci&oacute;n:xxxx');
    
@@ -429,12 +444,13 @@ function loadComerciosAsos()
  													//alert(JSON.stringify(_respuesta));
                            var _numResultados = _respuesta.resultado.length;
                            for (i = 0; i<_numResultados; i++) {                                 
+                           				var imagen_com="";
 		  														
-		  														var imagen_com=$.trim(_respuesta.resultado[0].logo.urlFormateada);
+		  														imagen_com=$.trim(_respuesta.resultado[0].logo.urlFormateada);
 		  														//var imagen_com="http://comerciohuesca.e-osca.com/imagen/{modo}/{ancho}/{alto}/01022016103822.jpg";
 		  														imagen_com=imagen_com.replace("{modo}","miniatura");
-		  														imagen_com=imagen_com.replace("{ancho}","200");
-		  														imagen_com=imagen_com.replace("{alto}","150");
+		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
+		  														imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
 		  														
 		  														var descrip=_respuesta.resultado[i].descripcion;
 		  														if(descrip==null)
@@ -539,13 +555,14 @@ function buscarComercio()
                            {
                            	//alert(_numResultados);
                            	var html_txt="";
-                           		for (i = 0; i<_numResultados; i++) {                                 
+                           		for (i = 0; i<_numResultados; i++) { 
+                           			                                
                            			var imagen_com="";
                            			try{
 		  															imagen_com=$.trim(_respuesta.resultado[i].logo.urlFormateada);		  															
 		  															imagen_com=imagen_com.replace("{modo}","miniatura");
-		  															imagen_com=imagen_com.replace("{ancho}","200");
-		  															imagen_com=imagen_com.replace("{alto}","150");
+		  															imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
+		  															imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
 		  															
 		  														}catch(e){}
 		  															var descrip=_respuesta.resultado[i].descripcion;
@@ -858,8 +875,8 @@ function loadOfertasLista() //getOfertasDia
                            		for (i = 0; i<_numResultados; i++) {   
                            			var imagen_com=_respuesta.resultado.Oferta.imagenes[0].urlFormateada;
 		  														imagen_com=imagen_com.replace("{modo}","miniatura");
-		  														imagen_com=imagen_com.replace("{ancho}","200");
-		  														imagen_com=imagen_com.replace("{alto}","150");
+		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
+		  														imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
                            			texto +='<div class="separador"></div>';
         												texto +='<div class="cabecera_resultado_busqueda">'+_respuesta.resultado.Oferta[i].nombre+'';
         												texto +='</div>';
@@ -877,8 +894,8 @@ function loadOfertasLista() //getOfertasDia
                           		{
                           			var imagen_com=_respuesta.resultado.Oferta.imagenes[0].urlFormateada;
 		  														imagen_com=imagen_com.replace("{modo}","miniatura");
-		  														imagen_com=imagen_com.replace("{ancho}","200");
-		  														imagen_com=imagen_com.replace("{alto}","150");
+		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
+		  														imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
 		  														
         												texto ='<div class="separador"></div>';
         												texto +='<div class="cabecera_resultado_busqueda">'+_respuesta.resultado.Oferta.nombre+'';
@@ -918,8 +935,8 @@ function loadComerciosLista()
                            		for (i = 0; i<_numResultados; i++) {   
                            			var imagen_com=_respuesta.resultado.Comercio[i].imagenes[0].urlFormateada;
 		  														imagen_com=imagen_com.replace("{modo}","miniatura");
-		  														imagen_com=imagen_com.replace("{ancho}","200");
-		  														imagen_com=imagen_com.replace("{alto}","150");
+		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
+		  														imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
 		  														var descrip=_respuesta.resultado.Comercio[i].descripcion;
 		  														if(descrip=='null')
 		  														{
@@ -953,8 +970,8 @@ function loadComerciosLista()
                           			
                           			var imagen_com=_respuesta.resultado.Comercio.logo.urlFormateada;
 		  														imagen_com=imagen_com.replace("{modo}","miniatura");
-		  														imagen_com=imagen_com.replace("{ancho}","256");
-		  														imagen_com=imagen_com.replace("{alto}","152");
+		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
+		  														imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
 		  														//alert(imagen_com);
 		  														var descrip=_respuesta.resultado.Comercio.descripcion;
 		  														if(descrip==null)
@@ -1008,8 +1025,8 @@ function contenidoWS()
                            	
                           			var imagen_com=_respuesta.resultado.Comercio.logo.urlFormateada;
 		  														imagen_com=imagen_com.replace("{modo}","miniatura");
-		  														imagen_com=imagen_com.replace("{ancho}","180");
-		  														imagen_com=imagen_com.replace("{alto}","150");
+		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
+		  														imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
 		  														//alert(imagen_com);
 		  														var descrip=_respuesta.resultado.Comercio.descripcion;
 		  														if(descrip==null)
@@ -1031,8 +1048,8 @@ function contenidoWS()
                            				var imagen_b=_respuesta.resultado.Comercio.imagenes[0].urlFormateada;
                            			
 		  														imagen_b=imagen_b.replace("{modo}","miniatura");
-		  														imagen_b=imagen_b.replace("{ancho}","200");
-		  														imagen_com=imagen_b.replace("{alto}","150");	
+		  														imagen_b=imagen_b.replace("{ancho}",IMG_WIDTH);
+		  														imagen_com=imagen_b.replace("{alto}",IMG_HEIGHT);	
 		  														html_esp+='<div id="foto1"><img class=img_com src="'+imagen_b+'"></div>';
 																	
 																}catch(e){}
@@ -1041,8 +1058,8 @@ function contenidoWS()
                            				var imagen_b=_respuesta.resultado.Comercio.imagenes[1].urlFormateada;
                            			
 		  														imagen_b=imagen_b.replace("{modo}","miniatura");
-		  														imagen_b=imagen_b.replace("{ancho}","200");
-		  														imagen_com=imagen_b.replace("{alto}","150");	
+		  														imagen_b=imagen_b.replace("{ancho}",IMG_WIDTH);
+		  														imagen_com=imagen_b.replace("{alto}",IMG_HEIGHT);	
 		  														html_esp+='<div id="foto2"><img class=img_com src="'+imagen_b+'"></div>';
 																}catch(e){}
 																html_esp+='<div id="espacio"><br>';
@@ -1076,8 +1093,8 @@ function loadOfertaDia() //getOfertasDia
                            	
                           			var imagen_com=_respuesta.resultado.Oferta.imagenes[0].urlFormateada;
 		  														imagen_com=imagen_com.replace("{modo}","miniatura");
-		  														imagen_com=imagen_com.replace("{ancho}","200");
-		  														imagen_com=imagen_com.replace("{alto}","150");
+		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
+		  														imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
 		  														//alert(imagen_com);
         												texto +='<div class="titulo_oferta">'+_respuesta.resultado.Oferta.nombre+'</div>';
 																texto +='<div class="evalucacion">     ';
@@ -1128,8 +1145,8 @@ if(COM_ID.length >0)
 		  		var imagen_com=COM_LOGO[a];
 		  		//var imagen_com="http://comerciohuesca.e-osca.com/imagen/{modo}/{ancho}/{alto}/01022016103822.jpg";
 		  		imagen_com=imagen_com.replace("{modo}","miniatura");
-		  		imagen_com=imagen_com.replace("{ancho}","200");
-		  		imagen_com=imagen_com.replace("{alto}","150");
+		  		imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
+		  		imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
 		  	}catch(e){}
 		  	
 		  														
@@ -1155,8 +1172,8 @@ if(COM_ID.length >0)
         	var imagen_b=COM_IMG1[a];
         
 		  		imagen_b=imagen_b.replace("{modo}","miniatura");
-		  		imagen_b=imagen_b.replace("{ancho}","200");
-		  		imagen_com=imagen_b.replace("{alto}","150");	
+		  		imagen_b=imagen_b.replace("{ancho}",IMG_WIDTH);
+		  		imagen_com=imagen_b.replace("{alto}",IMG_HEIGHT);	
 		  		//alert(imagen_com);
 		  		html_esp+='<div id="foto1"><img class=img_com src="'+COM_IMG1[a]+'"></div>';
 					
@@ -1166,8 +1183,8 @@ if(COM_ID.length >0)
         		var imagen_b=COM_IMG2[a];
         	
 		  			imagen_b=imagen_b.replace("{modo}","miniatura");
-		  			imagen_b=imagen_b.replace("{ancho}","200");
-		  			imagen_com=imagen_b.replace("{alto}","150");	
+		  			imagen_b=imagen_b.replace("{ancho}",IMG_WIDTH);
+		  			imagen_com=imagen_b.replace("{alto}",IMG_HEIGHT);	
 		  			html_esp+='<div id="foto2"><img class=img_com src="'+COM_IMG2[a]+'"></div>';
 					}catch(e){}
 					html_esp+='<div id="espacio"><br>';

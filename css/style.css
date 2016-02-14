@@ -624,7 +624,7 @@ margin-top:10px !important;
 .resultado_busqueda {
     float: left !important;
     padding: 1% !important;
-    width:20%;
+    width:30% !important;
 }
 .resultado_busqueda2 {
     
@@ -632,9 +632,10 @@ margin-top:10px !important;
     width:80%;
 }
 .resultado_busquedaL2 {
-    margin-left:210px !important;
-    padding: 1% !important;;
-    width:60% !important;
+    
+    padding: 1% !important;
+    width:70% !important;
+    
 }
 .imagen_oferta{ float: left;
     padding: 1%;
