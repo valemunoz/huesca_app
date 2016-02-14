@@ -446,7 +446,7 @@ function loadComerciosAsos()
                            for (i = 0; i<_numResultados; i++) {                                 
                            				var imagen_com="";
 		  														
-		  														imagen_com=$.trim(_respuesta.resultado[0].logo.urlFormateada);
+		  														imagen_com=$.trim(_respuesta.resultado[i].logo.urlFormateada);
 		  														//var imagen_com="http://comerciohuesca.e-osca.com/imagen/{modo}/{ancho}/{alto}/01022016103822.jpg";
 		  														imagen_com=imagen_com.replace("{modo}","miniatura");
 		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
