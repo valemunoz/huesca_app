@@ -118,7 +118,7 @@ function deviceListoNoSesion()
 			
 	loadBD();
 	setTimeout("getSesionBD();",200);
-	setTimeout("loadUserMenu(1);"
+	setTimeout("loadUserMenu(1);",300);
 	loadComerciosWS();		 
 	setTimeout("getComerciosBD();",1000);
 	
