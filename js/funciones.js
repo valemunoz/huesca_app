@@ -59,6 +59,8 @@ function deviceListoInicio()
 	}
 	loadBD();
 	getSesionBD();
+	loadComerciosWS();		 
+	setTimeout("getComerciosBD();",1500);
 	//setTimeout("getSesionBD();",300);
 	setTimeout("loadLogin();",500);
 	
