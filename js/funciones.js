@@ -128,9 +128,27 @@ function deviceListoNoSesion()
 function loadUserMenu(tip)
 {
 	
-
+if(BD_TICKET==0)
+{
+	if(tip==0)
+	{
+		openPopstatic("Su sesi&oacute;n ha caducado.",0);													 		
+		deleteSessionBD();
+		setTimeout("loadSesion();",1000);
+	}else
+		{
+			$("#barra_der").html('<a href="javascript:loadSesion();" class="link_op">Inicia Sesion<img width=13% src="img/login.png"></a>');
+		  loadMenuOff();
+		}
+}else
+	{
+		loadMenu();
+		$("#barra_izq").html("Bienvenido "+BD_USER);                           	
+		$("#barra_der").html('<a href="javascript:salir();" class="link_op">Cerrar Sesion<img width=13% src="img/login.png"></a>');
+		
+	}
 	//alert("tick:"+BD_TICKET);
-		var pl = new SOAPClientParameters();
+		/*var pl = new SOAPClientParameters();
 			pl.add("ticket", BD_TICKET);
 			
      SOAPClient.invoke(_wsUrl, "getUsuario", pl, true, function(_respuesta) {
@@ -162,7 +180,7 @@ function loadUserMenu(tip)
 													 		}
 													 }
 													//loadSesion
-                    });
+                    });*/
                     
                     $.mobile.loading( 'hide');	
 
@@ -448,7 +466,14 @@ function loadComerciosAsos()
                            alert(_respuesta.resultado);*/
  													//alert(JSON.stringify(_respuesta));
                            var _numResultados = _respuesta.resultado.length;
-                           for (i = 0; i<_numResultados; i++) {                                 
+                           
+                           for (i = 0; i<_numResultados; i++) {   
+                           	$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});                              
                            				var imagen_com="";
 		  														try
 		  														{
@@ -1139,6 +1164,12 @@ function loadOfertaDia() //getOfertasDia
 function loadComercioDetalleID(id_comercio)
 {
 //alert(id_comercio +":"+COM_ID.length);
+$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
 if(COM_ID.length >0)
 {
 		for(a=0; a < COM_ID.length; a++)
@@ -1204,7 +1235,7 @@ if(COM_ID.length >0)
 	setTimeout("loadComercioDetalleID(id_comercio);",500);
 }
 		  															
-		  															
+$.mobile.loading( 'hide');			  															
 		  													
 }
 function getDatosComercio(id_comercio)// a WS
