@@ -65,9 +65,10 @@ function deviceListoInicio()
 	loadBD();
 	getSesionBD();
 	loadComerciosWS();		 
-	setTimeout("getComerciosBD();",1500);
+	
 	//setTimeout("getSesionBD();",300);
 	setTimeout("loadLogin();",500);
+	setTimeout("getComerciosBD();",1500);
 	
 	
 }
@@ -92,11 +93,12 @@ function deviceListo()
 	IMG_WIDTH=ancho;
 	IMG_HEIGHT=ancho+10;
 	loadBD();
-	getSesionBD();
+	setTimeout("getSesionBD();",200);
+	setTimeout("loadUserMenu(0);",300);
 	loadComerciosWS();	
 	 
 	setTimeout("getComerciosBD();",1000);
-	setTimeout("loadUserMenu(0);",500);
+	
 	
 }
 function deviceListoNoSesion()
@@ -113,11 +115,14 @@ function deviceListoNoSesion()
 				theme: 'a',
 				html: ""
 			});
+			
 	loadBD();
+	setTimeout("getSesionBD();",200);
+	setTimeout("loadUserMenu(1);"
 	loadComerciosWS();		 
 	setTimeout("getComerciosBD();",1000);
-	setTimeout("getSesionBD();",200);
-	setTimeout("loadUserMenu(1);",500);
+	
+	
 	
 }
 function loadUserMenu(tip)
@@ -445,13 +450,14 @@ function loadComerciosAsos()
                            var _numResultados = _respuesta.resultado.length;
                            for (i = 0; i<_numResultados; i++) {                                 
                            				var imagen_com="";
-		  														
-		  														imagen_com=$.trim(_respuesta.resultado[i].logo.urlFormateada);
-		  														//var imagen_com="http://comerciohuesca.e-osca.com/imagen/{modo}/{ancho}/{alto}/01022016103822.jpg";
-		  														imagen_com=imagen_com.replace("{modo}","miniatura");
-		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
-		  														imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
-		  														
+		  														try
+		  														{
+		  															imagen_com=$.trim(_respuesta.resultado[i].logo.urlFormateada);
+		  															//var imagen_com="http://comerciohuesca.e-osca.com/imagen/{modo}/{ancho}/{alto}/01022016103822.jpg";
+		  															imagen_com=imagen_com.replace("{modo}","miniatura");
+		  															imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
+		  															imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
+		  														}catch(e){}
 		  														var descrip=_respuesta.resultado[i].descripcion;
 		  														if(descrip==null)
 		  														{
@@ -646,7 +652,8 @@ function delComerciosBD()
  		tx.executeSql('DROP TABLE IF EXISTS comercios');
     
   
-	}, errorCB, successCB);    
+	}, errorCB, successCB);  
+	 
 
 }
 function addComerciosBD(id,nombre,direccion,descripcion,telefono,mail,fax,web,logo, img1, img2)
@@ -707,7 +714,7 @@ function selectComercios(tx, results)
 				COM_IMG2[i]=results.rows.item(i).img2;    
 
  	  }
- 	    
+ 	    $.mobile.loading( 'hide'); 
 }
 function addSesionBD(ticket,usuario)
 {
