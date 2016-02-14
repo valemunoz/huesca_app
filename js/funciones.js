@@ -1127,7 +1127,7 @@ function loadOfertaDia() //getOfertasDia
 																texto +='<strong>     Precio Anterior:</strong> <span class="precio_antes">'+_respuesta.resultado.Oferta.precioAntes+' &#8364;</span><br />';
 																texto +='<strong> Precio Actual: </strong><span class="precio_despues" >'+_respuesta.resultado.Oferta.precio+' &#8364;</span>';
               									texto +='<div class="flota_der_oferta">  <a  href="javascript:loadComercioDetalleID('+_respuesta.resultado.Oferta.comercio.id+');" data-transition="flow" class="boton_login">VER COMERCIO</a></div>';
-												        texto +='<div class="separador"></div>';
+												        texto +='<div class="separador"></div><br><br></br>';
 												        
                           		  
                           			$("#contendor_contenido").html(texto);
