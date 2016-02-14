@@ -98,7 +98,8 @@ function deviceListoNoSesion()
 				html: ""
 			});
 	loadBD();
-	//getSesionBD();
+	loadComerciosWS();		 
+	setTimeout("getComerciosBD();",1000);
 	setTimeout("getSesionBD();",200);
 	setTimeout("loadUserMenu(1);",500);
 	
@@ -439,7 +440,7 @@ function loadComerciosAsos()
 		  															descrip="No hay descripci&oacute;n no disponible.";
 		  														}
                                   txt +='<div class="separador"></div>';
-        													txt +='<div class="cabecera_resultado_busqueda">'+_respuesta.resultado[i].nombre+'</div>';
+        													txt +='<div class="cabecera_resultado_busqueda" onclick="loadComercioDetalleID('+_respuesta.resultado[i].id+');">'+_respuesta.resultado[i].nombre+'</div>';
         													txt +='<div class="resultado_busqueda"><img src="'+imagen_com+'" /></div>';
         													txt +='<div class="resultado_busquedaL2">';
         													txt +='    <p>'+descrip+'</p>';
@@ -551,7 +552,7 @@ function buscarComercio()
 		  																descrip="No hay descripci&oacute;n disponible.";
 		  															}
 		  															html_txt +='<div class="separador"></div>';
-        														html_txt +='<div class="cabecera_resultado_busqueda"><a class="no_link" href="javascript:loadComercioDetalleID('+_respuesta.resultado[i].id+');">'+_respuesta.resultado[i].nombre.toUpperCase()+'</a></div>';
+        														html_txt +='<div class="cabecera_resultado_busqueda" onclick="loadComercioDetalleID('+_respuesta.resultado[i].id+');">'+_respuesta.resultado[i].nombre.toUpperCase()+'</div>';
         														if(imagen_com!="")
         														{
         															html_txt +='<div class="resultado_busqueda"><img src="'+imagen_com+'" /></div>';
@@ -1111,7 +1112,9 @@ function loadOfertaDia() //getOfertasDia
 }
 function loadComercioDetalleID(id_comercio)
 {
-	//alert(id_comercio +":"+COM_ID.length);
+//alert(id_comercio +":"+COM_ID.length);
+if(COM_ID.length >0)
+{
 		for(a=0; a < COM_ID.length; a++)
     {
 			if(COM_ID[a]==id_comercio)
@@ -1170,7 +1173,10 @@ function loadComercioDetalleID(id_comercio)
 				 $("#contendor_contenido").html(html_esp);
      }
   }
-
+}else
+{
+	setTimeout("loadComercioDetalleID(id_comercio);",500);
+}
 		  															
 		  															
 		  													
