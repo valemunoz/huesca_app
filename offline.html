@@ -11,11 +11,11 @@
         <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.0-rc.1.min.css" />
                 
         <script src="cordova.js"></script>
-				<script src="js/funciones.js"></script>
-				<script src="js/jquery-1.10.2.min.js"></script> 
-				<script src="js/soapclient.js"></script>
+       
+        <script src="js/jquery-1.10.2.min.js"></script> 
 				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
 				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+				<script src="js/funciones.js"></script>
 				
         <link rel="stylesheet" href="css/style.mobile.css" type="text/css">
         <link rel="stylesheet" href="css/style.mobile-jq.css" type="text/css">
@@ -25,7 +25,7 @@
 
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
-document.addEventListener("deviceready", deviceListo, false);
+//document.addEventListener("deviceready", deviceListo, false);
 
 </script>
     </head>
@@ -41,37 +41,31 @@ document.addEventListener("deviceready", deviceListo, false);
 					</div>
 				
 				<!--img src="img/fondo.png" class="body_inicio"-->
-				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
-						  		
-						  			<span id="barra_izq"></span>
-						  			<span id="barra_der"></span>
-						  		
-						  		
-								</div>
 				
+				<div id="fondo">
 					
-					<div id="contenido_ws">
+					<div id="titulo_div">
+						NO HAY CONEXI&Oacute;N A LA RED
 					</div>
-		
-					<div id="socialmedia">
-						<img style="margin-left:95%;" src="img/sociales/share.png" onclick="window.plugins.socialsharing.share('Message, subject, image and link', 'null', '', 'http://www.x-services.nl');">
-					</div>
-		
-				<br />&nbsp;
-				<br />&nbsp;
+ <div id="contendor_contenido">
+
+     <div class="imagen_noweb"> <img src="img/no_web.png" width="156" height="155" /></div>
+          <div class="texto_noweb">  No se puede establecer conexión con la red. <br />
+      Verifica la conexión de datos y vuelve a intentarlo.</div>
+<div class="separador"></div>
+    </div>
 					
+					
+					</div>
 			
                  
     	</div>
     	 	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
-    	<div id="menuNav"></div>
-
-<img height=50px src="img/logo_pie_ayto.png">
-</div><!-- /footer -->
-    	<script>
-    		setTimeout("contenidoWS();",1000);
     		
-    		</script>
+
+<img height=30px src="img/logo_pie_ayto.png">
+</div><!-- /footer -->
+    	
     	
     	  
  </div>

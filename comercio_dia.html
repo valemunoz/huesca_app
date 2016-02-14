@@ -27,6 +27,12 @@
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
 document.addEventListener("deviceready", deviceListo, false);
+	$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
 
 </script>
     </head>
@@ -44,46 +50,24 @@ document.addEventListener("deviceready", deviceListo, false);
 				<!--img src="img/fondo.png" class="body_inicio"-->
 				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
 						  		
-						  			<span id="barra_izq">Bienvenido Marta Gutierrez </span>
-						  			<span id="barra_der"><a href="sesion.html" class="link_op">Cerrar Sesion<img width=13% src="img/login.png"></a></span>
+						  			<span id="barra_izq"></span>
+						  			<span id="barra_der"></span>
 						  		
 						  		
 								</div>
 				
 					
 					<div id="titulo_div">
-						OFERTAS DEL D&Iacute;A
+						COMERCIOS DEL D&Iacute;A
 					</div>
 				 <div id="contendor_contenido">
 
-        La asociación la componen un gran número de comercios, aquí le  mostramos las mejores ofertas y promociones.
+        <p>La asociaci&oacute;n la componen un gran n&uacute;mero de comercios, aquí le  mostramos el <strong>Comercio del d&iacute;a</strong>. </p>
 <div class="separador"></div>
 <br />
 
-        <div class="separador"></div>
-        <div class="cabecera_resultado_busqueda">WEB DREAMS - 
-        ALOJA TU PORTAL WEB EN NUESTRO DATA CENTER 
-        </div>
-        <div class="imagen_oferta"><img src="img/oferta_demo.png" width="100%" /></div>
-        <div class="texto_oferta">
-            <p><br />
-            Diseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+D Diseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+DDiseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+D</p>
-            <p>&nbsp;</p>
-            <p><a href="oferta_detalle.html" class="boton_login">VER OFERTA</a>            </p>
-        </div>
-        <br />&nbsp;
-        <div class="separador"></div><div class="cabecera_resultado_busqueda">WEB DREAMS - 
-        ALOJA TU PORTAL WEB EN NUESTRO DATA CENTER 
-        </div>
-        <div class="imagen_oferta"><img src="img/oferta_demo.png" width="100%" /></div>
-        <div class="texto_oferta">
-            <p><br />
-            Diseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+D Diseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+DDiseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+D</p>
-            <p>&nbsp;</p>
-            <p><a href="oferta_detalle.html" class="boton_login">VER OFERTA</a>            </p>
-        </div>
         
-        <div class="separador"></div>
+      <div id="listado_oferta"></div>
 
 </div>
 					
@@ -95,8 +79,9 @@ document.addEventListener("deviceready", deviceListo, false);
 
 <img height=30px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
-    	
-    	
+    	<script>
+    		setTimeout("loadComerciosLista();",1300);
+    		</script>
     	  
  </div>
 

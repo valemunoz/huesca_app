@@ -13,6 +13,7 @@
         <script src="cordova.js"></script>
        
         <script src="js/jquery-1.10.2.min.js"></script> 
+        <script src="js/soapclient.js"></script>
 				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
 				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 				<script src="js/funciones.js"></script>
@@ -42,9 +43,9 @@ window.onresize = function() {
  		//$('.fondo_h').css('height',alto_h);
  		}
  		
-//document.addEventListener("offline", onready, false);
-//document.addEventListener("online", onready, false);
-document.addEventListener("deviceready", deviceListo, false);
+document.addEventListener("offline", offline, false);
+document.addEventListener("online", online, false);
+document.addEventListener("deviceready", deviceListoInicio, false);
 
 </script>
     </head>
@@ -55,12 +56,17 @@ document.addEventListener("deviceready", deviceListo, false);
     	  <div data-role="popup" id="myPopup">
 							<p>This is a completely basic popup, no options set.						</p>
 				</div>
+				<div data-role="popup" id="myPopup_static" class="ui-content" style="max-width:280px" data-dismissible="false">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+						<div id=cont_static></div>
+					</div>
 				
 				<img src="img/fondo.png" class="body_inicio">
 				<div id="fondo">
 					<div id="div_logo">
 						<img class="logo_prin" src="img/logo.png" width=40%><a class="link_reg2" href="javascript:loadSesion();" >Iniciar Sesión | </a><a class="link_reg" href="javascript:loadRegistro();" >Registro<img src="img/login.png"></a>
 					</div>
+				</br>
 					<div id="div_centro">
 						BIENVENIDO A LA APP DE COMERCIO DE HUESCA:<BR>
 						REG&Iacute;STRATE Y ENT&Eacute;RATE DE TODO LO QUE ESTA PASANDO EN EL<BR>
@@ -79,12 +85,12 @@ document.addEventListener("deviceready", deviceListo, false);
 				<ul>
 				<li><a class='li_a li_opaco' ><img width=50px src="img/comercio_dia.png"></a></li>
 			<li><a class='li_b li_opaco' ><img width=50px src="img/ofertas.png"></a></li>
-			<li><a class='li_a' href="comercios_asociados.html" data-transition="flow"><img width=50px src="img/comercios.png"></a></li>
+			<li><a class='li_a' href="javascript:loadComerciosAsociados();" data-transition="flow"><img width=50px src="img/comercios.png"></a></li>
 			<li><a class='li_b' href="javascript:loadMapa();"><img width=50px src="img/mapa.png"></a></li>
-			<li><a class='li_a' href="buscador.html" data-transition="flow"><img width=50px src="img/buscador.png"></a></li>	
+			<li><a class='li_a' href="javascript:loadBuscador();" data-transition="flow"><img width=50px src="img/buscador.png"></a></li>	
 				</ul>
 			</div><!-- /navbar -->
-    	<img width=150px src="img/logo_pie_ayto.png">
+    	<img height=50px src="img/logo_pie_ayto.png">
 		</div><!-- /footer -->
  </div>
 

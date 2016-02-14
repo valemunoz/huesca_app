@@ -60,30 +60,8 @@ document.addEventListener("deviceready", deviceListo, false);
 <div class="separador"></div>
 <br />
 
-        <div class="separador"></div>
-        <div class="cabecera_resultado_busqueda">WEB DREAMS - 
-        ALOJA TU PORTAL WEB EN NUESTRO DATA CENTER 
-        </div>
-        <div class="imagen_oferta"><img src="img/oferta_demo.png" width="100%" /></div>
-        <div class="texto_oferta">
-            <p><br />
-            Diseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+D Diseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+DDiseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+D</p>
-            <p>&nbsp;</p>
-            <p><a href="oferta_detalle.html" class="boton_login">VER OFERTA</a>            </p>
-        </div>
-        <br />&nbsp;
-        <div class="separador"></div><div class="cabecera_resultado_busqueda">WEB DREAMS - 
-        ALOJA TU PORTAL WEB EN NUESTRO DATA CENTER 
-        </div>
-        <div class="imagen_oferta"><img src="img/oferta_demo.png" width="100%" /></div>
-        <div class="texto_oferta">
-            <p><br />
-            Diseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+D Diseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+DDiseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+D</p>
-            <p>&nbsp;</p>
-            <p><a href="oferta_detalle.html" class="boton_login">VER OFERTA</a>            </p>
-        </div>
         
-        <div class="separador"></div>
+      <div id="listado_oferta"></div>
 
 </div>
 					
@@ -95,8 +73,9 @@ document.addEventListener("deviceready", deviceListo, false);
 
 <img height=30px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
-    	
-    	
+    	<script>
+    		setTimeout("loadOfertasLista();",1000);
+    		</script>
     	  
  </div>
 

@@ -14,6 +14,7 @@
         <script src="js/funciones.js"></script>
 				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 				<script src="js/jquery-1.10.2.min.js"></script> 
+				<script src="js/soapclient.js"></script>
 				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 				
 				
         <link rel="stylesheet" href="css/style.mobile.css" type="text/css">
@@ -30,9 +31,9 @@ $.mobile.loading( 'show', {
 				theme: 'a',
 				html: ""
 			});
-//document.addEventListener("offline", onready, false);
-//document.addEventListener("online", onready, false);
-document.addEventListener("deviceready", deviceListo, false);
+document.addEventListener("offline", offline, false);
+document.addEventListener("online", online, false);
+document.addEventListener("deviceready", deviceListoNoSesion, false);
 
 </script>
     </head>
@@ -50,8 +51,8 @@ document.addEventListener("deviceready", deviceListo, false);
 				<!--img src="img/fondo.png" class="body_inicio"-->
 				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
 						  		
-						  			<span id="barra_izq">Bienvenido Marta Gutierrez </span>
-						  			<span id="barra_der"><a href="sesion.html" class="link_op">Cerrar Sesion<img width=13% src="img/login.png"></a></span>
+						  			<span id="barra_izq"></span>
+						  			<span id="barra_der"></span>
 						  		
 						  		
 								</div>
@@ -75,17 +76,9 @@ document.addEventListener("deviceready", deviceListo, false);
                  
     	</div>
     	 	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
-    		<div data-role="navbar">
-		<ul>
-		<li><a class='li_a' href="comercio.html" data-transition="flow"><img width=50px src="img/comercio_dia.png"></a></li>
-			<li><a class='li_b' href="lista_ofertas.html" data-transition="flow"><img width=50px src="img/ofertas.png"></a></li>
-			<li><a class='li_a' href="comercios_asociados.html" data-transition="flow"><img width=50px src="img/comercios.png"></a></li>
-			<li><a class='li_b' href="javascript:loadMapa();"><img width=50px src="img/mapa.png"></a></li>
-			<li><a class='li_a' href="buscador.html" data-transition="flow"><img width=50px src="img/buscador.png"></a></li>	
-		</ul>
-	</div><!-- /navbar -->
+    	<div id="menuNav"></div>
 
-    	<!--img width=150px src="img/logo_pie_ayto.png"-->
+<img height=50px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
     	
     	<script>

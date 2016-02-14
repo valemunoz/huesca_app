@@ -8,10 +8,19 @@
 
 #mappage, #mappage .ui-content
 {
-	height:85% !important;
+	height:80% !important;
 	position:absolute;
 }
-
+#mappage_ses
+{
+	height:50% !important;
+	position:absolute;
+}
+#mappage_reg
+{
+	height:90% !important;
+	position:absolute;
+}
 body, input, select, textarea, button, .ui-btn
 {
 	font-family: "dinp" !important;
@@ -499,7 +508,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 
 #left_cont
 {
-	width:70% !important;
+	width:60% !important;
 	
 	float: left;
 }
@@ -510,7 +519,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
     
     padding: 1%;
     
-    width: 20% !important;
+    width: 15% !important;
 	
 }
 #div_contenido_com
@@ -559,9 +568,9 @@ text-align:center;
 .linea
 {
 	clear:both;
-
 	background-color: #6D0135 !important;
-	height:10px !important;
+	height:5px !important;
+	margin-top:10px !important;
 }
 #espacio
 {
@@ -573,6 +582,7 @@ text-align:center;
 margin-right:12%;
 float:right;
 position:relative;
+margin-top:10px !important;
 }
 .logo_prin
 {
@@ -612,12 +622,23 @@ position:relative;
 }
 
 .resultado_busqueda {
-    float: left;
+    float: left !important;
+    padding: 1% !important;
+    width:20%;
+}
+.resultado_busqueda2 {
+    
     padding: 1%;
+    width:80%;
+}
+.resultado_busquedaL2 {
+    margin-left:210px !important;
+    padding: 1% !important;;
+    width:60%;
 }
 .imagen_oferta{ float: left;
     padding: 1%;
-	width:20%;}
+}
 
 .sitio_web {
     background-color: #6d0135;
@@ -625,6 +646,7 @@ position:relative;
     padding: 1%;
     color: white;
     text-decoration: none;
+    height:60px !important;
 }
 
 .sitio_web:hover {
@@ -692,6 +714,7 @@ position:relative;
     padding: 1%;
     color: white !important;
     text-decoration: none;
+    
 }
 #mapa
 {
@@ -724,4 +747,34 @@ position:relative;
 				text-decoration:line-through;}
 				
 				.precio_despues{color:#770042;
+		font-weight:bold;
+	}
+#myPopup_static 
+{
+	min-width:230px !important;
+	opacity:1 !important;
+	
+}
+#cont_static
+{
+	color: #CC707A !important;
+	padding:5px;
+	font-size:14px;
+}
+.imagen_noweb{float:left;
+		display:inline-block;
+		padding:1%;}
+		
+		.texto_noweb{float:left;
+		display:inline-block; padding: 4% 1% 1%;
 		font-weight:bold;}
+#contenido_ws
+{
+	height:60% !important;
+}
+.no_link
+{
+	text-decoration:none !important;   
+color: #6D0135 !important;
+    font-weight: bold !important;
+}

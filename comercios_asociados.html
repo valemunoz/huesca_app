@@ -13,21 +13,17 @@
         <script src="cordova.js"></script>
        
         <script src="js/jquery-1.10.2.min.js"></script> 
+        <script src="js/soapclient.js"></script>
 				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
 				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 				<script src="js/funciones.js"></script>
+				
 				
         <link rel="stylesheet" href="css/style.mobile.css" type="text/css">
         <link rel="stylesheet" href="css/style.mobile-jq.css" type="text/css">
    			      <link rel="stylesheet" href="css/style.css" />
    			
-<script>
 
-//document.addEventListener("offline", onready, false);
-//document.addEventListener("online", onready, false);
-document.addEventListener("deviceready", deviceListo, false);
-
-</script>
     </head>
     <body>
     <div data-role="page" id="mappage" data-theme="a">
@@ -39,12 +35,16 @@ document.addEventListener("deviceready", deviceListo, false);
     	  	<div data-role="popup" id="myPopup">
 							<p>This is a completely basic popup, no options set.						</p>
 					</div>
+					<div data-role="popup" id="myPopup_static" class="ui-content" style="max-width:280px" data-dismissible="false">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+						<div id=cont_static></div>
+					</div>
 				
 				
 				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
 						  		
-						  			<span id="barra_izq">Bienvenido Marta Gutierrez </span>
-						  			<span id="barra_der"><a href="sesion.html" class="link_op">Cerrar Sesion<img width=13% src="img/login.png"></a></span>
+						  			<span id="barra_izq"></span>
+						  			<span id="barra_der"></span>
 						  		
 						  		
 								</div>
@@ -58,62 +58,34 @@ document.addEventListener("deviceready", deviceListo, false);
 <div class="separador"></div>
 <br />
 
-        <div class="separador"></div>
-        <div class="cabecera_resultado_busqueda">WEB DREAMS (INFORMÁTICA)</div>
-        <div class="resultado_busqueda"><img src="http://www.comerciohuesca.com/~ftpcomercio/0339_02.jpg" /></div>
-        <div class="resultado_busqueda">
-            <p>Diseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+D</p>
-            <p>
-                <strong>
-                    Dirección:
-                </strong>walqa, edifcio 2 1ª planta - 22197 - CUARTE
-            </p>
-            <a href="#" class="sitio_web">Sitio web</a>
-        </div>
-        <br />&nbsp;
-        <div class="separador"></div><div class="cabecera_resultado_busqueda">WEB DREAMS (INFORMÁTICA)</div>
-        <div class="resultado_busqueda"><img src="http://www.comerciohuesca.com/~ftpcomercio/0339_02.jpg" /></div>
-        <div class="resultado_busqueda">
-            <p>Diseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+D</p>
-            <p>
-                <strong>
-                    Dirección:
-                </strong>walqa, edifcio 2 1ª planta - 22197 - CUARTE
-            </p>
-            <a href="#" class="sitio_web">Sitio web</a>
-        </div>
-        <div class="separador"></div><div class="cabecera_resultado_busqueda">WEB DREAMS (INFORMÁTICA)</div>
-        <div class="resultado_busqueda"><img src="http://www.comerciohuesca.com/~ftpcomercio/0339_02.jpg" /></div>
-        <div class="resultado_busqueda">
-            <p>Diseño web, hospedaje web, intranet y extranet, servidor de base de datos, consultoría I+D</p>
-            <p>
-                <strong>
-                    Dirección:
-                </strong>walqa, edifcio 2 1ª planta - 22197 - CUARTE
-            </p>
-            <a href="#" class="sitio_web">Sitio web</a>
-            <br />&nbsp;
-            <br />&nbsp;
-        </div>
-
+        <div id="centro_cont"></div>
+       
+        
 </div>
 					
 			
                  
     	</div>
     	 	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
-    		<div data-role="navbar">
-		<ul>
-				<li><a class='li_a' href="comercio.html" data-transition="flow"><img width=50px src="img/comercio_dia.png"></a></li>
-			<li><a class='li_b' href="lista_ofertas.html" data-transition="flow"><img width=50px src="img/ofertas.png"></a></li>
-			<li><a class='li_a' href="comercios_asociados.html" data-transition="flow"><img width=50px src="img/comercios.png"></a></li>
-			<li><a class='li_b' href="javascript:loadMapa();"><img width=50px src="img/mapa.png"></a></li>
-			<li><a class='li_a' href="buscador.html" data-transition="flow"><img width=50px src="img/buscador.png"></a></li>	
-		</ul>
-	</div><!-- /navbar -->
+    	 		<div id="menuNav"></div>
+    		
+		  
+				
 
-<!--img width=150px src="img/logo_pie_ayto.png"-->
+<img height=50px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
+<script>
+
+document.addEventListener("offline", offline, false);
+document.addEventListener("online", online, false);
+document.addEventListener("deviceready", deviceListoNoSesion, false);
+
+</script>
+<script>
+	
+	
+	setTimeout("loadComerciosAsos();",500);
+	</script>
     	
 	
  </div>

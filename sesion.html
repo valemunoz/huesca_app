@@ -13,6 +13,7 @@
         <script src="cordova.js"></script>
        
         <script src="js/jquery-1.10.2.min.js"></script> 
+        <script src="js/soapclient.js"></script>
 				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
 				
 				<script src="js/funciones.js"></script>
@@ -23,14 +24,14 @@
    			
 <script>
 
-//document.addEventListener("offline", onready, false);
-//document.addEventListener("online", onready, false);
-document.addEventListener("deviceready", deviceListo, false);
+document.addEventListener("offline", offline, false);
+document.addEventListener("online", online, false);
+//document.addEventListener("deviceready", deviceListo, false);
 
 </script>
     </head>
     <body>
-    <div data-role="page" id="mappage" data-theme="a">
+    <div data-role="page" id="mappage_ses" data-theme="a">
 		    
    		
    		
@@ -39,11 +40,16 @@ document.addEventListener("deviceready", deviceListo, false);
     	  	<div data-role="popup" id="myPopup">
 							<p>This is a completely basic popup, no options set.						</p>
 					</div>
+						<div data-role="popup" id="myPopup_static" class="ui-content" style="max-width:280px" data-dismissible="false">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+						<div id=cont_static></div>
+					</div>
+					
 				
 				<!--img src="img/fondo.png" class="body_inicio"-->
 				<div id="fondo">
 					<div id="div_logo">
-						<a href="index.html"><img class="logo_prin" src="img/logo.png" width=30%>	</a>
+						<a href="index.html"><img class="logo_prin" src="img/logo.png" height=15%>	</a>
 					</div>
 					<div id="titulo_div">
 						ACCEDE A LA ZONA PRIVADA Y DESCUBRE TODAS LAS VENTAJAS
@@ -64,7 +70,7 @@ document.addEventListener("deviceready", deviceListo, false);
     	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
     		
 
-    	<img width=150px src="img/logo_pie_ayto.png">
+    	<img height=50px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
     	
     

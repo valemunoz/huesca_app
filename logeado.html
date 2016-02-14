@@ -13,6 +13,7 @@
         <script src="cordova.js"></script>
        
         <script src="js/jquery-1.10.2.min.js"></script> 
+        <script src="js/soapclient.js"></script>
 				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
 				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 				<script src="js/funciones.js"></script>
@@ -22,9 +23,14 @@
    			      <link rel="stylesheet" href="css/style.css" />
    			
 <script>
-
-//document.addEventListener("offline", onready, false);
-//document.addEventListener("online", onready, false);
+$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+document.addEventListener("offline", offline, false);
+document.addEventListener("online", online, false);
 document.addEventListener("deviceready", deviceListo, false);
 
 </script>
@@ -39,12 +45,16 @@ document.addEventListener("deviceready", deviceListo, false);
     	  	<div data-role="popup" id="myPopup">
 							<p>This is a completely basic popup, no options set.						</p>
 					</div>
+					<div data-role="popup" id="myPopup_static" class="ui-content" style="max-width:280px;opacity: 0.99 !important;" data-dismissible="false">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+						<div id=cont_static></div>
+					</div>
 				
 				<!--img src="img/fondo.png" class="body_inicio"-->
 				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
 						  		
-						  			<span id="barra_izq">Bienvenido Marta Gutierrez </span>
-						  			<span id="barra_der"><a href="sesion.html" class="link_op">Cerrar Sesion<img width=13% src="img/login.png"></a></span>
+						  			<span id="barra_izq"> </span>
+						  			<span id="barra_der"></span>
 						  		
 						  		
 								</div>
@@ -53,17 +63,17 @@ document.addEventListener("deviceready", deviceListo, false);
 					<div id="titulo_div">
 						OFERTAS
 					</div>
-					<div id="div_ofertas" onclick="javascript:window.location.href='lista_ofertas.html';">
+					<div id="div_ofertas" onclick="javascript:window.location.href='oferta_detalle.html';">
 						<div id="left_img"><img class="img_alerta" src="img/mensaje_alerta.png"> </div>
-						<div id="rig_img">Dispone<strong> 3 ofertas</strong> nuevas sin vizualizar</div>
+						<div id="rig_img">Dispone<strong> de <span id="num_oferta"></span></strong> sin vizualizar</div>
 					</div>
 
 <div id="titulo_div">
 						COMERCIOS
 					</div>
-					<div id="div_ofertas" onclick="javascript:window.location.href='lista_comercios.html';">
+					<div id="div_ofertas" onclick="javascript:window.location.href='comercio.html';">
 						<div id="left_img"><img  class="img_alerta" src="img/mensaje_alerta.png"> </div>
-						<div id="rig_img">Dispone<strong> 2 comercios del dia</strong> nuevos sin vizualizar</div>
+						<div id="rig_img">Dispone<strong> de <span id="comer"></span></strong> sin vizualizar</div>
 					</div>
 					
 					
@@ -73,19 +83,14 @@ document.addEventListener("deviceready", deviceListo, false);
     	</div>
     	 	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
     		
-<div data-role="navbar">
-		<ul>
-				<li><a class='li_a' href="comercio.html" data-transition="flow"><img width=50px src="img/comercio_dia.png"></a></li>
-			<li><a class='li_b' href="lista_ofertas.html" data-transition="flow"><img width=50px src="img/ofertas.png"></a></li>
-			<li><a class='li_a' href="comercios_asociados.html" data-transition="flow"><img width=50px src="img/comercios.png"></a></li>
-			<li><a class='li_b' href="javascript:loadMapa();"><img width=50px src="img/mapa.png"></a></li>
-			<li><a class='li_a' href="buscador.html" data-transition="flow"><img width=50px src="img/buscador.png"></a></li>	
-		</ul>
-	</div><!-- /navbar -->
-    	<!--img width=150px src="img/logo_pie_ayto.png"-->
+<div id="menuNav"></div>
+<img height=50px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
     	
-    	
+ <script>
+ 	setTimeout("loadOfertasDia();loadComerciosDia();",1000);
+ 	
+ 	</script>   	
     	  
  </div>
 

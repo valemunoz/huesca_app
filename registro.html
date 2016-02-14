@@ -13,6 +13,7 @@
         <script src="cordova.js"></script>
        
         <script src="js/jquery-1.10.2.min.js"></script> 
+        <script src="js/soapclient.js"></script>
 				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
 				
 				<script src="js/funciones.js"></script>
@@ -22,22 +23,23 @@
    			      <link rel="stylesheet" href="css/style.css" />
    			
 <script>
-//document.addEventListener("offline", onready, false);
-//document.addEventListener("online", onready, false);
+document.addEventListener("offline", offline, false);
+document.addEventListener("online", online, false);
 document.addEventListener("deviceready", deviceListo, false);
 
 </script>
     </head>
     <body>
     	
-    <div data-role="page" id="mappage" data-theme="a">
+    <div data-role="page" id="mappage_reg" data-theme="a">
 		    
    		
    		
    	  <div data-role="content" id="contenido" >
    	  <div id="header_fondo"></div>	
-    	  	<div data-role="popup" id="myPopup">
-							<p>This is a completely basic popup, no options set.						</p>
+    	  		<div data-role="popup" id="myPopup_static" class="ui-content" style="max-width:280px" data-dismissible="false">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+						<div id=cont_static></div>
 					</div>
 				
 				<img src="img/fondo.png" class="body_inicio">
@@ -54,21 +56,23 @@ document.addEventListener("deviceready", deviceListo, false);
 						<span>NOMBRE</span>
 						<input class=input_form  type="text" id="nombre" name="nombre" value="" placeholder="NOMBRE">
 						<span>APELLIDOS</span>
-						<input class=input_form  type="text" id="apps" name="apps" value="" placeholder="APELLIDOS">
+						<input class=input_form  type="text" id="app" name="app" value="" placeholder="APELLIDOS">
 						<span>EMAIL</span>
-						<input class=input_form  type="text" id="apps" name="apps" value="" placeholder="EMAIL">
+						<input class=input_form  type="text" id="mail" name="mail" value="" placeholder="EMAIL">
+						<span>CONTRASE&Ntilde;A</span>
+						<input class=input_form  type="password" id="clv" name="clv" value="" placeholder="EMAIL">
 						<span>FECHA NACIMIENTO</span>
-						<input type="date" class=input_form name="date" id="date" value="" placeholder="FECHA NACIMIENTO">
-						<select name="select-choice-a" id="select-choice-a" data-native-menu="false">
-    					<option>SEXO</option>
-    					<option value="0">Femenino</option>
-    					<option value="1">Masculino</option>
+						<input type="date" class=input_form name="fec" id="fec" value="" placeholder="FECHA NACIMIENTO">
+						<select name="sexo" id="sexo" data-native-menu="false">
+    					<option value="">SEXO</option>
+    					<option value="H">Femenino</option>
+    					<option value="M">Masculino</option>
     
 						</select>	
 						<input type="checkbox" name="checkbox-1a" id="checkbox-1a" >
     				<label for="checkbox-1a">Acepto las condiciones de uso y protecci&oacute;n de datos.</label>
     				<a href="#mod_condiciones" data-rel="dialog" data-transition="pop">Leer condiciones</a>
-						<div class="boton_css al_right">REGISTRAR </div>
+						<div class="boton_css al_right" onclick="validaUsuario();">REGISTRAR </div>
 					</br></br></br></br>
 					
 					</div>	
@@ -78,7 +82,7 @@ document.addEventListener("deviceready", deviceListo, false);
     	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
     		
 
-    	<img width=150px src="img/logo_pie_ayto.png">
+    	<img height=50px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
    
     	
