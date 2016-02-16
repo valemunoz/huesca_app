@@ -486,7 +486,7 @@ function loadComerciosAsos()
 		  														var descrip=_respuesta.resultado[i].descripcion;
 		  														if(descrip==null)
 		  														{
-		  															descrip="No hay descripci&oacute;n no disponible.";
+		  															descrip="No hay descripci&oacute;n disponible.";
 		  														}
                                   txt +='<div class="separador"></div>';
         													txt +='<div class="cabecera_resultado_busqueda" onclick="loadComercioDetalleID('+_respuesta.resultado[i].id+');">'+_respuesta.resultado[i].nombre+'</div>';
@@ -985,7 +985,7 @@ function loadComerciosLista()
 		  														var descrip=_respuesta.resultado[i].descripcion;
 		  														if(descrip==null)
 		  														{
-		  															descrip="No hay descripci&oacute;n.";
+		  															descrip="No hay descripci&oacute;n disponible.";
 		  														}
                            			texto +='<div class="separador"></div>';
         												texto +='<div class="cabecera_resultado_busqueda">'+_respuesta.resultado[i].nombre+'';
@@ -1021,7 +1021,7 @@ function loadComerciosLista()
 		  														var descrip=_respuesta.resultado.Comercio.descripcion;
 		  														if(descrip==null)
 		  														{
-		  															descrip="No hay descripci&oacute;n.";
+		  															descrip="No hay descripci&oacute;n disponible.";
 		  														}
         												texto ='<div class="separador"></div>';
         												texto +='<div class="cabecera_resultado_busqueda">'+_respuesta.resultado.Comercio.nombre+'';
