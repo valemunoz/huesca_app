@@ -754,6 +754,7 @@ margin-top:10px !important;
 {
 	min-width:230px !important;
 	opacity:1 !important;
+	z-index:9999999 !important;
 	
 }
 #cont_static
@@ -761,6 +762,7 @@ margin-top:10px !important;
 	color: #CC707A !important;
 	padding:5px;
 	font-size:14px;
+	font-weight:bold;
 }
 .imagen_noweb{float:left;
 		display:inline-block;

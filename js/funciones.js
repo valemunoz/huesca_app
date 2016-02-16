@@ -498,7 +498,7 @@ function loadComerciosAsos()
         													txt +='            Direcci&oacute;n:';
         													txt +='        </strong>'+_respuesta.resultado[i].direccion+'';
         													txt +='    </p>';
-        													txt +='    <a href="'+_respuesta.resultado[i].web+'" class="sitio_web">Sitio web</a>';
+        													txt +='    <a href="'+_respuesta.resultado[i].web+'" class="boton_login">SITIO WEB</a>';
         													txt +='</div>';
         													txt +='<br />&nbsp;';        
         													
@@ -614,7 +614,7 @@ function buscarComercio()
         														html_txt +='            Direcci&oacute;n:';
         														html_txt +='        </strong>'+_respuesta.resultado[i].direccion+'';
         														html_txt +='    </p>';
-        														html_txt +='    <a href="'+_respuesta.resultado[i].web+'" class="sitio_web">Sitio web</a>';
+        														html_txt +='    <a href="'+_respuesta.resultado[i].web+'" class="boton_login">SITIO WEB</a>';
         														html_txt +='</div>';
         														html_txt +='<br />&nbsp;';
 
@@ -815,7 +815,8 @@ function loadComercio()
 }
 function loadOferta()
 {
-	window.location.href='oferta_detalle.html';
+	//window.location.href='oferta_detalle.html';
+	window.location.href='oferta_dia.html';
 }
 function loadMenu()
 {
@@ -904,18 +905,22 @@ function loadOfertasLista() //getOfertasDia
                            	var texto="";
                            	if(_numResultados>1)
                            	{
-                           		for (i = 0; i<_numResultados; i++) {   
-                           			var imagen_com=_respuesta.resultado.Oferta.imagenes[0].urlFormateada;
+                           		for (i = 0; i<_numResultados; i++) { 
+                           			var imagen_com="";
+                           			try
+                           			{  
+                           			 imagen_com=_respuesta.resultado[i].imagenes[0].urlFormateada;
 		  														imagen_com=imagen_com.replace("{modo}","miniatura");
 		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
 		  														imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
+		  													}catch(e){}
                            			texto +='<div class="separador"></div>';
-        												texto +='<div class="cabecera_resultado_busqueda">'+_respuesta.resultado.Oferta[i].nombre+'';
+        												texto +='<div class="cabecera_resultado_busqueda">'+_respuesta.resultado[i].nombre+'';
         												texto +='</div>';
         												texto +='<div class="imagen_oferta"><img src="'+imagen_com+'" width="100%" /></div>';
         												texto +='<div class="texto_oferta">';
         												texto +='    <p><br />';
-        												texto +='    '+_respuesta.resultado.Oferta.descripcion.slice(0,200);+' ...</p>';
+        												texto +='    '+_respuesta.resultado[i].descripcion.slice(0,200);+' ...</p>';
         												texto +='    <p>&nbsp;</p>';
         												texto +='    <p><a href="oferta_detalle.html" class="boton_login">VER OFERTA</a>            </p>';
         												texto +='</div>';
@@ -924,25 +929,28 @@ function loadOfertasLista() //getOfertasDia
                           		}
                           	}else
                           		{
-                          			var imagen_com=_respuesta.resultado.Oferta.imagenes[0].urlFormateada;
+                          			var imagen_com=_respuesta.resultado[i].imagenes[0].urlFormateada;
 		  														imagen_com=imagen_com.replace("{modo}","miniatura");
 		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
 		  														imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
 		  														
         												texto ='<div class="separador"></div>';
-        												texto +='<div class="cabecera_resultado_busqueda">'+_respuesta.resultado.Oferta.nombre+'';
+        												texto +='<div class="cabecera_resultado_busqueda">'+_respuesta.resultado[i].nombre+'';
         												texto +='</div>';
         												texto +='<div class="imagen_oferta"><img src="'+imagen_com+'" width="100%" /></div>';
         												texto +='<div class="texto_oferta">';
         												texto +='    <p><br />';
-        												texto +='    '+_respuesta.resultado.Oferta.descripcion.slice(0,200);+' ...</p>';
+        												texto +='    '+_respuesta.resultado[i].descripcion.slice(0,200);+' ...</p>';
         												texto +='    <p>&nbsp;</p>';
         												texto +='    <p><a href="oferta_detalle.html" class="boton_login">VER OFERTA</a>            </p>';
         												texto +='</div>';
         												texto +='<br />&nbsp;';
                           		}
                           		$("#listado_oferta").html(texto);
-                           }
+                           }else
+                           	{
+                           		$("#listado_oferta").html("No hay ofertas disponibles");
+                           	}
                     });
                     
 	
@@ -956,42 +964,47 @@ function loadComerciosLista()
 			pl.add("ticket", BD_TICKET);
 			
      SOAPClient.invoke(_wsUrl, "getComerciosDia", pl, true, function(_respuesta) {
-                          // alert("tick:"+JSON.stringify(_respuesta)); 
+                          //alert("tick:"+JSON.stringify(_respuesta)); 
                            var _numResultados = _respuesta.resultado.length;
+                          // alert(_numResultados);
                            if(_respuesta.error==0)
                            {
                            	var texto="";
                            	
                            	if(_numResultados>1)
                            	{
-                           		for (i = 0; i<_numResultados; i++) {   
-                           			var imagen_com=_respuesta.resultado.Comercio[i].imagenes[0].urlFormateada;
+                           		for (i = 0; i<_numResultados; i++) {
+                           			var imagen_com="";
+                           			try
+                           			{
+                           			imagen_com=_respuesta.resultado[i].imagenes[0].urlFormateada;
 		  														imagen_com=imagen_com.replace("{modo}","miniatura");
 		  														imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
 		  														imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
-		  														var descrip=_respuesta.resultado.Comercio[i].descripcion;
-		  														if(descrip=='null')
+		  													}catch(e){}
+		  														var descrip=_respuesta.resultado[i].descripcion;
+		  														if(descrip==null)
 		  														{
-		  															descrip="";
+		  															descrip="No hay descripci&oacute;n.";
 		  														}
                            			texto +='<div class="separador"></div>';
-        												texto +='<div class="cabecera_resultado_busqueda">'+_respuesta.resultado.Comercio[i].nombre+'';
+        												texto +='<div class="cabecera_resultado_busqueda">'+_respuesta.resultado[i].nombre+'';
         												texto +='</div>';
         												texto +='<div class="imagen_oferta"><img src="'+imagen_com+'" width="100%" /></div>';
         												texto +='<div class="texto_oferta">';
         												texto +='    <p><br />';
         												try{
-        													texto +=''+descrip.slice(0,70);+'...</p>';
+        													texto +=''+descrip.slice(0,70)+'...</p>';
         												}catch(e){texto +='No hay descripci&oacute;n disponible.</p>';}
         												for(a=0; a < COM_ID.length; a++)
         												{
-																		if(COM_ID[a]==_respuesta.resultado.Comercio[i].id)
+																		if(COM_ID[a]==_respuesta.resultado[i].id)
 																		{
         															texto +='<p><strong>Direcci&oacute;n: </strong>'+COM_DIRECCION[a]+'<span id="dir_com"></span></p>';
         															break;
         														}
         												}
-        												texto +='    <p><a href="javascript:loadComercioDetalleID('+_respuesta.resultado.Comercio[i].id+');" class="boton_login">VER COMERCIO</a>            </p>';
+        												texto +='    <p><a href="javascript:loadComercioDetalleID('+_respuesta.resultado[i].id+');" class="boton_login">VER COMERCIO</a>            </p>';
         												texto +='</div>';
         												texto +='<br />&nbsp;';                              
 		  										 		
