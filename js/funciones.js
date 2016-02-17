@@ -1,5 +1,5 @@
 var map;
-
+var PATH_QUERY="http://desarrollo.chilemap.cl/huesca/query.php";
 var ONLINE=100;
 var _wsUrl = "http://comerciohuescaws.e-osca.com/WebService.asmx";
 var ticket=0;
@@ -50,9 +50,24 @@ function openPopstatic(contenido,tiempo)
     }, tiempo);
   }
 }
+function getSesionPHP(tipo)
+{
+	
+	 $("#output").load(PATH_QUERY, 
+			{tipo:7, tip:tipo} 
+				,function(){
+					
+					//$('#resultado').trigger('create');
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
+}
 function deviceListoInicio()
 {
-	var ancho=$("#contenido").width();
+	loadBD();
+	getSesionPHP(1);
+	/*var ancho=$("#contenido").width();
 	ancho=Math.round((ancho*25)/100);
 	IMG_WIDTH=ancho;
 	IMG_HEIGHT=ancho+10;
@@ -68,7 +83,7 @@ function deviceListoInicio()
 	
 	//setTimeout("getSesionBD();",300);
 	setTimeout("loadLogin();",500);
-	setTimeout("getComerciosBD();",1500);
+	setTimeout("getComerciosBD();",1500);*/
 	
 	
 }
@@ -81,14 +96,10 @@ function loadLogin()
 }
 function deviceListo()
 {
-	
-	$.mobile.loading( 'show', {
-				text: 'Cargando...',
-				textVisible: true,
-				theme: 'a',
-				html: ""
-			});
-			var ancho=$("#contenido").width();
+	loadBD();
+	getSesionBD();
+	getSesionPHP(2);
+			/*var ancho=$("#contenido").width();
 	ancho=Math.round((ancho*25)/100);
 	IMG_WIDTH=ancho;
 	IMG_HEIGHT=ancho+10;
@@ -99,22 +110,20 @@ function deviceListo()
 	 
 	setTimeout("getComerciosBD();",1000);
 	
-	
+	*/
 }
 function deviceListoNoSesion()
 {
-	//alert($("#contenido").width());
+	loadBD();
+	getSesionBD();
+	getSesionPHP(3);
+	/*//alert($("#contenido").width());
 	var ancho=$("#contenido").width();
 	ancho=Math.round((ancho*25)/100);
 	IMG_WIDTH=ancho;
 	IMG_HEIGHT=ancho+10;
 	//alert("paso:dev");
-	$.mobile.loading( 'show', {
-				text: 'Cargando...',
-				textVisible: true,
-				theme: 'a',
-				html: ""
-			});
+	
 			
 	loadBD();
 	setTimeout("getSesionBD();",200);
@@ -122,7 +131,7 @@ function deviceListoNoSesion()
 	loadComerciosWS();		 
 	setTimeout("getComerciosBD();",1000);
 	
-	
+	*/
 	
 }
 function loadUserMenu(tip)
@@ -205,23 +214,15 @@ function initMap()
     scrollwheel: false,
     zoom: 14
   });
-  var pl = new SOAPClientParameters();
-                    SOAPClient.invoke(_wsUrl, "getComercios", pl, true, function(_respuesta) {
-                          // alert(JSON.stringify(_respuesta));
-                           /*alert(_respuesta.error);
-                           alert(_respuesta.resultado);*/
- 													//alert(JSON.stringify(_respuesta));
-                           var _numResultados = _respuesta.resultado.length;
-                           for (i = 0; i<_numResultados; i++) {
-                           	try
-                           	{
-                           		//alert(_respuesta.resultado[i].gps.latitud);
-                           	    marcadorGoogle(_respuesta.resultado[i].gps.longitud,_respuesta.resultado[i].gps.latitud,'<strong>'+_respuesta.resultado[i].nombre.toUpperCase()+'</strong><br>Direcci&oacute;n: '+_respuesta.resultado[i].direccion);
-                           	}catch(e){}
-                          }
-                          $.mobile.loading( 'hide');	
-  });
-   //marcadorGoogle(-0.409196,42.135587,'<strong>NOMBRE COMERCIO</strong><br>Direcci&oacute;n:xxxx');
+  
+  $("#output").load(PATH_QUERY, 
+			{tipo:5} 
+				,function(){
+					//$('#resultado').trigger('create');
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
    
   
   
@@ -292,7 +293,16 @@ function validaLogin()
 				theme: 'a',
 				html: ""
 			});
-			var pl = new SOAPClientParameters();
+			$("#output").load(PATH_QUERY, 
+			{tipo:6, user:user, pass:pass} 
+				,function(){
+					
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
+			
+			/*var pl = new SOAPClientParameters();
 			pl.add("email", user);
 			pl.add("pass", pass);
 			
@@ -314,7 +324,7 @@ function validaLogin()
                            	}                         
 													$.mobile.loading( 'hide');	
 													//loadSesion
-                    });
+                    });*/
 		
 	}else
 		{
@@ -456,63 +466,19 @@ function loadComerciosAsos()
 				theme: 'a',
 				html: ""
 			});
+var ancho=$("#mappage").width();
 
-			
-			var txt="";
-			var pl = new SOAPClientParameters();
-                    SOAPClient.invoke(_wsUrl, "getComercios", pl, true, function(_respuesta) {
-                           //alert(JSON.stringify(_respuesta));
-                           /*alert(_respuesta.error);
-                           alert(_respuesta.resultado);*/
- 													//alert(JSON.stringify(_respuesta));
-                           var _numResultados = _respuesta.resultado.length;
-                           
-                           for (i = 0; i<_numResultados; i++) {   
-                           	$.mobile.loading( 'show', {
-				text: 'Cargando...',
-				textVisible: true,
-				theme: 'a',
-				html: ""
-			});                              
-                           				var imagen_com="";
-		  														try
-		  														{
-		  															imagen_com=$.trim(_respuesta.resultado[i].logo.urlFormateada);
-		  															//var imagen_com="http://comerciohuesca.e-osca.com/imagen/{modo}/{ancho}/{alto}/01022016103822.jpg";
-		  															imagen_com=imagen_com.replace("{modo}","miniatura");
-		  															imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
-		  															imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
-		  														}catch(e){}
-		  														var descrip=_respuesta.resultado[i].descripcion;
-		  														if(descrip==null)
-		  														{
-		  															descrip="No hay descripci&oacute;n disponible.";
-		  														}
-                                  txt +='<div class="separador"></div>';
-        													txt +='<div class="cabecera_resultado_busqueda" onclick="loadComercioDetalleID('+_respuesta.resultado[i].id+');">'+_respuesta.resultado[i].nombre+'</div>';
-        													txt +='<div class="resultado_busqueda"><img src="'+imagen_com+'" /></div>';
-        													txt +='<div class="resultado_busquedaL2">';
-        													txt +='    <p>'+descrip+'</p>';
-        													txt +='    <p>';
-        													txt +='        <strong>';
-        													txt +='            Direcci&oacute;n:';
-        													txt +='        </strong>'+_respuesta.resultado[i].direccion+'';
-        													txt +='    </p>';
-        													txt +='    <a href="'+_respuesta.resultado[i].web+'" class="boton_login">SITIO WEB</a>';
-        													txt +='</div>';
-        													txt +='<br />&nbsp;';        
-        													
-                                  
-                                 
-                           }
-                           
-                          // alert(img_com);
-                           $("#centro_cont").html(txt);
-                           //$("<div></div>").html(txt).appendTo("#centro_cont");
-                           $('#centro_cont').trigger('create');
-													$.mobile.loading( 'hide');	
-                           
-                    });
+	ancho=Math.round((ancho*25)/100);
+	IMG_WIDTH=ancho;
+	IMG_HEIGHT=ancho+10;
+				$("#centro_cont").load(PATH_QUERY, 
+			{tipo:2, img_h:IMG_HEIGHT, img_w:IMG_WIDTH} 
+				,function(){
+					$('#resultado').trigger('create');
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
 			
 }
 function loadComerciosAsociados()
@@ -528,117 +494,42 @@ function loadFiltroBuscador()
 				theme: 'a',
 				html: ""
 			});
-			var pl = new SOAPClientParameters();	
-			
-     SOAPClient.invoke(_wsUrl, "getComerciosActividades", pl, true, function(_respuesta) {
-                           //alert("tick:"+JSON.stringify(_respuesta)); 
-                           var _numResultados = _respuesta.resultado.length;
-                           if(_respuesta.error==0)
-                           {
-                           	var html_txt='<select name="act" id="act">';
-                           	 html_txt +='<option value=0>SELECCIONE UNA OPCI&Oacute;N</option>';
-                           		for (i = 0; i<_numResultados; i++) { 
-                           			html_txt +="<option value='"+_respuesta.resultado[i].id+"'>"+_respuesta.resultado[i].nombre.toUpperCase()+"</option>";                           			                                
-		  														
-		  												}
-		  												
-		  													$("#opt_act").html(html_txt);
-		  													$('#contendor_contenido').trigger('create');
-		  											}
-		  											$.mobile.loading( 'hide');
-		 });
+	$("#fondo_buscador").load(PATH_QUERY, 
+			{tipo:3} 
+				,function(){
+					$('#fondo_buscador').trigger('create');
+					$.mobile.loading( 'hide');	
+					
+				}
+			);		
 }
 function buscarComercio()
 {
-	var query=$.trim(document.getElementById("qry").value);
-	var act=$.trim(document.getElementById("act").value);
-	
-	/*if(query=="" && act==0)
-	{
-		openPopstatic("Debe ingresar una consulta o actividad.",0);
-	}else
-		{*/
-			$.mobile.loading( 'show', {
+	$.mobile.loading( 'show', {
 				text: 'Buscando...',
 				textVisible: true,
 				theme: 'a',
 				html: ""
 			});
-			var pl = new SOAPClientParameters();	
-			if(query!="")
-			{
-				pl.add("nombre", query);
-			}
-			if(act !=0)
-			{
-				pl.add("actividadId", act);
-			}
-			
-     SOAPClient.invoke(_wsUrl, "getComercios", pl, true, function(_respuesta) {
-                           //alert("tick:"+JSON.stringify(_respuesta)); 
-                           var paso=true;
-                           try
-                           {
-                           	var _numResultados = _respuesta.resultado.length;
-                           }catch(e){paso=false;}
-                           
-                           if(_respuesta.error==0 && paso==true)
-                           {
-                           	//alert(_numResultados);
-                           	var html_txt="";
-                           		for (i = 0; i<_numResultados; i++) { 
-                           			                                
-                           			var imagen_com="";
-                           			try{
-		  															imagen_com=$.trim(_respuesta.resultado[i].logo.urlFormateada);		  															
-		  															imagen_com=imagen_com.replace("{modo}","miniatura");
-		  															imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
-		  															imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
-		  															
-		  														}catch(e){}
-		  															var descrip=_respuesta.resultado[i].descripcion;
-		  															if(descrip==null)
-		  															{
-		  																descrip="No hay descripci&oacute;n disponible.";
-		  															}
-		  															html_txt +='<div class="separador"></div>';
-        														html_txt +='<div class="cabecera_resultado_busqueda" onclick="loadComercioDetalleID('+_respuesta.resultado[i].id+');">'+_respuesta.resultado[i].nombre.toUpperCase()+'</div>';
-        														if(imagen_com!="")
-        														{
-        															html_txt +='<div class="resultado_busqueda"><img src="'+imagen_com+'" /></div>';
-        														}
-        														html_txt +='<div class="resultado_busquedaL2">';
-        														html_txt +='    <p>'+descrip+'</p>';
-        														html_txt +='    <p>';
-        														html_txt +='        <strong>';
-        														html_txt +='            Direcci&oacute;n:';
-        														html_txt +='        </strong>'+_respuesta.resultado[i].direccion+'';
-        														html_txt +='    </p>';
-        														html_txt +='    <a href="'+_respuesta.resultado[i].web+'" class="boton_login">SITIO WEB</a>';
-        														html_txt +='</div>';
-        														html_txt +='<br />&nbsp;';
+	var query=$.trim(document.getElementById("qry").value);
+	var act=$.trim(document.getElementById("act").value);
+	
+	
+	var ancho=$("#mappage").width();
 
-		  														
-		  													}
-		  												
-		  													$("#resultado").html(html_txt);
-		  												}else
-		  													{
-		  														$("#resultado").html("No Hay Resultados.");
-		  													}
-		  												$.mobile.loading( 'hide');
-		});
-		  															
-			/*$("#resultado").load(PATH_QUERY, 
-			{tipo:4, actividad:act, query:query} 
+	ancho=Math.round((ancho*25)/100);
+	IMG_WIDTH=ancho;
+	IMG_HEIGHT=ancho+10;
+
+								
+			$("#resultado").load(PATH_QUERY, 
+			{tipo:4, actividad:act, query:query, img_w:IMG_WIDTH, img_h:IMG_HEIGHT} 
 				,function(){
 					$('#resultado').trigger('create');
 					$.mobile.loading( 'hide');	
 					
 				}
-			);*/
-			
-		//}
+			);
 }
 
 
@@ -771,6 +662,7 @@ function selectSesion(tx, results)
   {
   	//alert("no hay resultados");
   	
+  	
   }  
  	for (var i = 0; i < results.rows.length; i++) 
  	{
@@ -795,13 +687,19 @@ function deleteSessionBD()
 function salir()
 {
 	deleteSessionBD();
-	var pl = new SOAPClientParameters();
+	$("#output").load(PATH_QUERY, 
+			{tipo:8} 
+				,function(){					
+					window.location.href="index.html";					
+				}
+			);
+	/*var pl = new SOAPClientParameters();
 			pl.add("ticket", BD_TICKET);
      SOAPClient.invoke(_wsUrl, "logoutUsuario", pl, true, function(_respuesta) {
                            //alert("tick:"+JSON.stringify(_respuesta));                             
 													 window.location.href='index.html';
 
-                    });
+                    });*/
 }
 
 function loadBuscador()
@@ -893,8 +791,27 @@ function loadComerciosDia()
 function loadOfertasLista() //getOfertasDia
 {
 	//alert(BD_TICKET);
-	
-	var pl = new SOAPClientParameters();
+	var ancho=$("#mappage").width();
+
+	ancho=Math.round((ancho*25)/100);
+	IMG_WIDTH=ancho;
+	IMG_HEIGHT=ancho+10;
+	$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+	 $("#listado_oferta").load(PATH_QUERY, 
+			{tipo:9, img_w:IMG_WIDTH,img_h:IMG_HEIGHT} 
+				,function(){
+					
+					$('#listado_oferta').trigger('create');
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
+	/*var pl = new SOAPClientParameters();
 			pl.add("ticket", BD_TICKET);
 			
      SOAPClient.invoke(_wsUrl, "getOfertasDia", pl, true, function(_respuesta) {
@@ -951,7 +868,7 @@ function loadOfertasLista() //getOfertasDia
                            	{
                            		$("#listado_oferta").html("No hay ofertas disponibles");
                            	}
-                    });
+                    });*/
                     
 	
 }
@@ -959,8 +876,27 @@ function loadOfertasLista() //getOfertasDia
 function loadComerciosLista()
 {
 	//alert(BD_TICKET);
-	
-	var pl = new SOAPClientParameters();
+	var ancho=$("#mappage").width();
+
+	ancho=Math.round((ancho*25)/100);
+	IMG_WIDTH=ancho;
+	IMG_HEIGHT=ancho+10;
+	$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+	 $("#listado_oferta").load(PATH_QUERY, 
+			{tipo:10, img_w:IMG_WIDTH,img_h:IMG_HEIGHT} 
+				,function(){
+					
+					$('#listado_oferta').trigger('create');
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
+	/*var pl = new SOAPClientParameters();
 			pl.add("ticket", BD_TICKET);
 			
      SOAPClient.invoke(_wsUrl, "getComerciosDia", pl, true, function(_respuesta) {
@@ -1051,7 +987,7 @@ function loadComerciosLista()
                           		$("#listado_oferta").html(texto);
                           		$.mobile.loading( 'hide');	
                            }
-                    });
+                    });*/
                     
 	
 }
@@ -1176,6 +1112,27 @@ function loadOfertaDia() //getOfertasDia
 }
 function loadComercioDetalleID(id_comercio)
 {
+	var ancho=$("#mappage").width();
+
+	ancho=Math.round((ancho*25)/100);
+	IMG_WIDTH=ancho;
+	IMG_HEIGHT=ancho+10;
+	$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+	$("#contendor_contenido").load(PATH_QUERY, 
+			{tipo:12, comercio:id_comercio, img_w:IMG_WIDTH, img_h:IMG_HEIGHT} 
+				,function(){
+					
+					$('#contendor_contenido').trigger('create');
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
+	/*
 //alert(id_comercio +":"+COM_ID.length);
 $.mobile.loading( 'show', {
 				text: 'Cargando...',
@@ -1249,7 +1206,7 @@ if(COM_ID.length >0)
 }
 		  															
 $.mobile.loading( 'hide');			  															
-		  													
+		  */													
 }
 function getDatosComercio(id_comercio)// a WS
 {
@@ -1332,4 +1289,47 @@ function loadComerciosWS()
      });
      
 	
+}
+
+function loadOfertasInicio()
+{
+	$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+	$("#fondo").load(PATH_QUERY, 
+			{tipo:11} 
+				,function(){
+					
+					$('#fondo').trigger('create');
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
+}
+
+function loadOfertaDetalle(id_oferta)
+{
+	/*var ancho=$("#mappage").width();
+
+	ancho=Math.round((ancho*25)/100);
+	IMG_WIDTH=ancho;
+	IMG_HEIGHT=ancho+10;
+	$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+	$("#contendor_contenido").load(PATH_QUERY, 
+			{tipo:13, id_oferta:id_oferta, img_w:IMG_WIDTH, img_h:IMG_HEIGHT} 
+				,function(){
+					
+					$('#contendor_contenido').trigger('create');
+					$.mobile.loading( 'hide');	
+					
+				}
+			);*/
 }

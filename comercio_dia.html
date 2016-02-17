@@ -27,12 +27,7 @@
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
 document.addEventListener("deviceready", deviceListo, false);
-	$.mobile.loading( 'show', {
-				text: 'Cargando...',
-				textVisible: true,
-				theme: 'a',
-				html: ""
-			});
+
 
 </script>
     </head>
@@ -77,10 +72,10 @@ document.addEventListener("deviceready", deviceListo, false);
     	 	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
     	<div id="menuNav"></div>
 
-<img height=30px src="img/logo_pie_ayto.png">
+<img height=50px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
     	<script>
-    		setTimeout("loadComerciosLista();",1300);
+    		loadComerciosLista();
     		</script>
     	  
  </div>

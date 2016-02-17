@@ -40,12 +40,16 @@ document.addEventListener("deviceready", deviceListo, false);
     	  	<div data-role="popup" id="myPopup">
 							<p>This is a completely basic popup, no options set.						</p>
 					</div>
+					<div data-role="popup" id="myPopup_static" class="ui-content" style="max-width:280px;opacity: 0.99 !important;" data-dismissible="false">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+						<div id=cont_static></div>
+					</div>
 				
 				<!--img src="img/fondo.png" class="body_inicio"-->
 				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
 						  		
-						  			<span id="barra_izq">Bienvenido Marta Gutierrez </span>
-						  			<span id="barra_der"><a href="sesion.html" class="link_op">Cerrar Sesion<img width=13% src="img/login.png"></a></span>
+						  			<span id="barra_izq"></span>
+						  			<span id="barra_der"></span>
 						  		
 						  		
 								</div>
@@ -74,7 +78,7 @@ document.addEventListener("deviceready", deviceListo, false);
 <img height=30px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
     	<script>
-    		setTimeout("loadOfertasLista();",1200);
+    		loadOfertasLista();
     		</script>
     	  
  </div>
