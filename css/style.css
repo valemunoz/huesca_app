@@ -8,18 +8,21 @@
 
 #mappage, #mappage .ui-content
 {
-	height:80% !important;
-	position:absolute;
+	overflow-x:hidden !important; 
+	
+	
+	/*height:80% !important;
+	position:absolute;*/
 }
 #mappage_ses
 {
-	height:50% !important;
-	position:absolute;
+	/*height:50% !important;
+	position:absolute;*/
 }
 #mappage_reg
 {
-	height:90% !important;
-	position:absolute;
+	/*height:90% !important;
+	position:absolute*/
 }
 body, input, select, textarea, button, .ui-btn
 {
@@ -30,7 +33,7 @@ body, input, select, textarea, button, .ui-btn
 #contenido
 {
 	
-	
+	height:100% !important;
 	max-height:100% !important;
 	overflow-y: auto !important;	
 		overflow-x:hidden !important; 
@@ -645,7 +648,7 @@ margin-top:10px !important;
 }
 .resultado_busquedaL2 {
     
-    padding: 1% !important;
+    /*padding: 1% !important;*/
     width:95% !important;
     
 }
@@ -792,4 +795,9 @@ margin-top:10px !important;
 	text-decoration:none !important;   
 color: #6D0135 !important;
     font-weight: bold !important;
+}
+#texto_oferta
+{
+	
+	margin-top: -4px !important;
 }

@@ -22,13 +22,7 @@
         <link rel="stylesheet" href="css/style.mobile-jq.css" type="text/css">
    			      <link rel="stylesheet" href="css/style.css" />
    			
-<script>
 
-document.addEventListener("offline", offline, false);
-document.addEventListener("online", online, false);
-document.addEventListener("deviceready", deviceListo, false);
-
-</script>
     </head>
     <body>
     <div data-role="page" id="mappage" data-theme="a">
@@ -72,12 +66,18 @@ document.addEventListener("deviceready", deviceListo, false);
 			
                  
     	</div>
-    	 	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page>
+    	 	<div data-role="footer" data-id="foo1" data-position="fixed" data-fullscreen="true" id="foot_page" >
     	<div id="menuNav"></div>
 
 <img height=30px src="img/logo_pie_ayto.png">
 </div><!-- /footer -->
     	<script>
+
+document.addEventListener("offline", offline, false);
+document.addEventListener("online", online, false);
+document.addEventListener("deviceready", deviceListo, false);
+
+
     		loadOfertasLista();
     		</script>
     	  

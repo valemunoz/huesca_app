@@ -3,7 +3,7 @@ var PATH_QUERY="http://desarrollo.chilemap.cl/huesca/query.php";
 var ONLINE=100;
 var _wsUrl = "http://comerciohuescaws.e-osca.com/WebService.asmx";
 var ticket=0;
-var db = openDatabase('MyDB', '1.0', 'My Sample DB', 10000 * 1024);
+//var db = openDatabase('MyDB', '1.0', 'My Sample DB', 10000 * 1024);
 var BD_USER=0;
 var BD_TICKET=0;
 var comercio_detalle=Array();
@@ -53,6 +53,7 @@ function openPopstatic(contenido,tiempo)
 function getSesionPHP(tipo)
 {
 	
+	
 	 $("#output").load(PATH_QUERY, 
 			{tipo:7, tip:tipo} 
 				,function(){
@@ -65,7 +66,9 @@ function getSesionPHP(tipo)
 }
 function deviceListoInicio()
 {
-	loadBD();
+
+   
+	//loadBD();
 	getSesionPHP(1);
 	/*var ancho=$("#contenido").width();
 	ancho=Math.round((ancho*25)/100);
@@ -96,8 +99,9 @@ function loadLogin()
 }
 function deviceListo()
 {
-	loadBD();
-	getSesionBD();
+	/*loadBD();
+	getSesionBD();*/
+	
 	getSesionPHP(2);
 			/*var ancho=$("#contenido").width();
 	ancho=Math.round((ancho*25)/100);
@@ -114,8 +118,8 @@ function deviceListo()
 }
 function deviceListoNoSesion()
 {
-	loadBD();
-	getSesionBD();
+	/*loadBD();
+	getSesionBD();*/
 	getSesionPHP(3);
 	/*//alert($("#contenido").width());
 	var ancho=$("#contenido").width();
@@ -475,7 +479,7 @@ var ancho=$("#mappage").width();
 			{tipo:2, img_h:IMG_HEIGHT, img_w:IMG_WIDTH} 
 				,function(){
 					$('#resultado').trigger('create');
-					$.mobile.loading( 'hide');	
+					setTimeout("$.mobile.loading( 'hide');	",1000);
 					
 				}
 			);
@@ -686,7 +690,7 @@ function deleteSessionBD()
 }	
 function salir()
 {
-	deleteSessionBD();
+	//deleteSessionBD();
 	$("#output").load(PATH_QUERY, 
 			{tipo:8} 
 				,function(){					
@@ -790,7 +794,7 @@ function loadComerciosDia()
 }
 function loadOfertasLista() //getOfertasDia
 {
-	//alert(BD_TICKET);
+	
 	var ancho=$("#mappage").width();
 
 	ancho=Math.round((ancho*25)/100);
