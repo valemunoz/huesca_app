@@ -474,7 +474,7 @@ var ancho=$("#mappage").width();
 
 	ancho=Math.round((ancho*25)/100);
 	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho+10;
+	IMG_HEIGHT=ancho-10;
 				$("#centro_cont").load(PATH_QUERY, 
 			{tipo:2, img_h:IMG_HEIGHT, img_w:IMG_WIDTH} 
 				,function(){
@@ -523,7 +523,7 @@ function buscarComercio()
 
 	ancho=Math.round((ancho*25)/100);
 	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho+10;
+	IMG_HEIGHT=ancho-10;
 
 								
 			$("#resultado").load(PATH_QUERY, 
@@ -724,8 +724,9 @@ function loadMenu()
 {
 	
 	var menu ="<div data-role='navbar'><ul>";
-	 menu +="		<li><a class='li_a' href='javascript:loadComercio();' data-transition='flow'><img width=50px src='img/comercio_dia.png'></a></li>";
-	menu +="		<li><a class='li_b' href='javascript:loadOferta();' data-transition='flow'><img width=50px src='img/ofertas.png'></a></li>";
+	 
+	menu +="		<li><a class='li_a' href='javascript:loadOferta();' data-transition='flow'><img width=50px src='img/ofertas.png'></a></li>";
+	menu +="		<li><a class='li_b' href='javascript:loadComercio();' data-transition='flow'><img width=50px src='img/comercio_dia.png'></a></li>";
 	menu +="		<li><a class='li_a' href='javascript:loadComerciosAsociados();' data-transition='flow'><img width=50px src='img/comercios.png'></a></li>";
 	menu +="		<li><a class='li_b' href='javascript:loadMapa();'><img width=50px src='img/mapa.png'></a></li>";
 	menu +="		<li><a class='li_a' href='javascript:loadBuscador();' data-transition='flow'><img width=50px src='img/buscador.png'></a></li>	";
@@ -739,8 +740,9 @@ function loadMenuOff()
 	
 	
 	var menu ="<div data-role='navbar'><ul>";
-	 menu +="		<li><a class='li_a li_opaco' href='#' data-transition='flow'><img width=50px src='img/comercio_dia.png'></a></li>";
-	menu +="		<li><a class='li_b li_opaco' href='#' data-transition='flow'><img width=50px src='img/ofertas.png'></a></li>";
+	 
+	menu +="		<li><a class='li_a li_opaco' href='#' data-transition='flow'><img width=50px src='img/ofertas.png'></a></li>";
+	menu +="		<li><a class='li_b ' href='javascript:loadComercio();'  href='#' data-transition='flow'><img width=50px src='img/comercio_dia.png'></a></li>";
 	menu +="		<li><a class='li_a' href='javascript:loadComerciosAsociados();' data-transition='flow'><img width=50px src='img/comercios.png'></a></li>";
 	menu +="		<li><a class='li_b' href='javascript:loadMapa();'><img width=50px src='img/mapa.png'></a></li>";
 	menu +="		<li><a class='li_a' href='javascript:loadBuscador();' data-transition='flow'><img width=50px src='img/buscador.png'></a></li>	";
@@ -799,7 +801,7 @@ function loadOfertasLista() //getOfertasDia
 
 	ancho=Math.round((ancho*25)/100);
 	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho+10;
+	IMG_HEIGHT=ancho-10;
 	$.mobile.loading( 'show', {
 				text: 'Cargando...',
 				textVisible: true,
@@ -884,7 +886,7 @@ function loadComerciosLista()
 
 	ancho=Math.round((ancho*25)/100);
 	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho+10;
+	IMG_HEIGHT=ancho-10;
 	$.mobile.loading( 'show', {
 				text: 'Cargando...',
 				textVisible: true,
@@ -1118,9 +1120,9 @@ function loadComercioDetalleID(id_comercio)
 {
 	var ancho=$("#mappage").width();
 
-	ancho=Math.round((ancho*25)/100);
+	ancho=Math.round((ancho*35)/100);
 	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho+10;
+	IMG_HEIGHT=ancho-10;
 	$.mobile.loading( 'show', {
 				text: 'Cargando...',
 				textVisible: true,
@@ -1316,11 +1318,11 @@ function loadOfertasInicio()
 
 function loadOfertaDetalle(id_oferta)
 {
-	/*var ancho=$("#mappage").width();
+	var ancho=$("#mappage").width();
 
 	ancho=Math.round((ancho*25)/100);
 	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho+10;
+	IMG_HEIGHT=ancho-10;
 	$.mobile.loading( 'show', {
 				text: 'Cargando...',
 				textVisible: true,
@@ -1335,5 +1337,5 @@ function loadOfertaDetalle(id_oferta)
 					$.mobile.loading( 'hide');	
 					
 				}
-			);*/
+			);
 }

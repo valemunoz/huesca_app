@@ -90,14 +90,15 @@ document.addEventListener("deviceready", deviceListoInicio, false);
     		
 			<div data-role="navbar">
 				<ul>
-				<li><a class='li_a li_opaco' ><img width=50px src="img/comercio_dia.png"></a></li>
-			<li><a class='li_b li_opaco' ><img width=50px src="img/ofertas.png"></a></li>
+				
+			<li><a class='li_a li_opaco' ><img width=50px src="img/ofertas.png"></a></li>
+			<li><a class='li_b' href='javascript:loadComercio();' ><img width=50px src="img/comercio_dia.png"></a></li>
 			<li><a class='li_a' href="javascript:loadComerciosAsociados();" data-transition="flow"><img width=50px src="img/comercios.png"></a></li>
 			<li><a class='li_b' href="javascript:loadMapa();"><img width=50px src="img/mapa.png"></a></li>
 			<li><a class='li_a' href="javascript:loadBuscador();" data-transition="flow"><img width=50px src="img/buscador.png"></a></li>	
 				</ul>
 			</div><!-- /navbar -->
-    	V0.3<img height=50px src="img/logo_pie_ayto.png">
+    	V0.5<img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
 		</div><!-- /footer -->
  </div>
 
