@@ -26,7 +26,7 @@
 }
 body, input, select, textarea, button, .ui-btn
 {
-	font-family: "dinp" !important;
+	/*font-family: "dinp" !important;*/
 	
 }
 
@@ -72,18 +72,15 @@ background: url("../img/fondo.png")  no-repeat fixed center !important;
 }
 .link_reg {
     color: #c95649 !important;
-    float: right !important;
-    margin-right: -210px;
-    margin-top: -1px;
+  font-weight:normal !important;
     text-decoration: none;
 }
 .link_reg2
 {
 	float:right !important;
 	color:#C95649 !important;
-	 text-decoration:none;   
-		margin-right: 98px;
-		margin-top: 19px;
+	 
+	font-weight:normal !important;
 }
 #div_logo
 {
@@ -91,14 +88,21 @@ background: url("../img/fondo.png")  no-repeat fixed center !important;
 	width:98% !important;
 	position:relative;
 }
-.boton_login {
+/*.boton_login {
     background-color: #C50119;
-   /* width: 98%;*/
+   
     padding: 2%;
     color: white !important;
     text-decoration: none;
     
     
+}*/
+.boton_login {
+    background-color: #770042;
+   /* width: 98%;*/
+    padding: 1%;
+    color: white !important;
+    text-decoration: none;
 }
 #div_centro
 {
@@ -106,14 +110,16 @@ background: url("../img/fondo.png")  no-repeat fixed center !important;
 	margin-top:10% !important;
 	height:140px !important;
 	width:80% !important;
-	background-color: #EAEAEB !important;
+	background-color: #f0f0f0 !important;
 	margin:0 auto;
-	color: #770042 !important;
-	font-size:12px !important;
-	font-weight:bold;
-	padding:15px;
+	color: #6d0135;
+    font-size: 20px;
+    font-weight: bold;
+	padding: 1% 2%;
 	
 }
+
+
 @media (max-width: 250px) and (min-width: 0px) {
 
 	.li_a
@@ -543,12 +549,14 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	height:auto !important;
 	min-height:100px !important;
 	/*width:80% !important;*/
-	margin-left: 5%;
+	
 	
 	font-size:15px !important;	
-	padding:10px;
+	/*padding:10px;
+	margin-left: 1%;
+	*/
 	text-align:left !important;
-	color: #676767;
+	
 	
 }
 #foto1{
@@ -630,9 +638,14 @@ margin-top:10px !important;
 }
 
 #contendor_contenido {
-    width: 95%;
+    width: 97%;
+    height:98% !important;
     margin: auto;
     position:relative;
+}
+#contendor_contenido a {
+    color: #770042;
+    text-decoration: none;
 }
 .separador {
     clear: both;
@@ -659,7 +672,7 @@ margin-top:10px !important;
     width:80%;
 }
 .resultado_busquedaL2 {
-    
+	text-align:left !important;    
     /*padding: 1% !important;*/
     width:95% !important;
     
@@ -723,19 +736,19 @@ margin-top:10px !important;
     padding: 1% 2%;
 }
 
-.texto_buscador {
+/*.texto_buscador {
     width: 20%;
     float: left;
     padding-top: 1%;
     margin: 1%;
     font-weight: bold;
-}
+}*/
 
-.input_buscador {
+/*.input_buscador {
     width: 76%;
     float: left;
     margin: 1%;
-}
+}*/
 
 #mapa
 {
@@ -756,13 +769,17 @@ margin-top:10px !important;
 			float:right;
 			 
 			}
+			.evalucacionLeft{
 			
+			 
+			}
 					
 		.flota_der_oferta{
 			float:right; text-align: right;
     	width: 40%;
-			 
+			
 			}
+			
 			.precio_antes{
 				
 				text-decoration:line-through;}
@@ -806,3 +823,60 @@ color: #6D0135 !important;
 	
 	margin-top: -4px !important;
 }
+
+.fondo_login{
+	   background-color: #7FE0E1;
+    padding: 1% 2%;
+	-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+  opacity: 0.9;
+	}
+.texto_buscador {
+    width: 98%;
+    float: left;
+
+    margin: 0.5%;
+    font-weight: bold;
+	text-transform:uppercase;
+	color: #770042;
+}
+
+.input_buscador {
+    width: 98%;
+    float: left;
+    margin: 0.5%;
+}
+.input_LOGIN{
+	float:right;
+	
+	    width: 98%;
+  text-align: right;
+    margin: 1% 0.5%;}
+
+.boton_buscar {
+    background-color: #770042;
+   /* width: 98%;*/
+    padding: 1%;
+    color: white !important;
+    text-decoration: none;
+	float:right
+}
+
+    .boton_buscar:hover {
+        background-color: #BF5164;
+    }
+
+
+#bottom_imgfoot
+{
+	bottom:0 auto !important;
+	float:right !important;
+}
+.contenido_oferta{
+ background-color: white;
+    clear: both;
+    display: block;
+    float: left;
+    }
+   

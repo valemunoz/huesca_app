@@ -67,28 +67,7 @@ function getSesionPHP(tipo)
 function deviceListoInicio()
 {
 
-   
-	//loadBD();
-	getSesionPHP(1);
-	/*var ancho=$("#contenido").width();
-	ancho=Math.round((ancho*25)/100);
-	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho+10;
-	try
-	{
-		navigator.splashscreen.hide();
-	}catch(e)
-	{
-	}
-	loadBD();
-	getSesionBD();
-	loadComerciosWS();		 
-	
-	//setTimeout("getSesionBD();",300);
-	setTimeout("loadLogin();",500);
-	setTimeout("getComerciosBD();",1500);*/
-	
-	
+	getSesionPHP(1);	
 }
 function loadLogin()
 {
@@ -99,43 +78,14 @@ function loadLogin()
 }
 function deviceListo()
 {
-	/*loadBD();
-	getSesionBD();*/
 	
 	getSesionPHP(2);
-			/*var ancho=$("#contenido").width();
-	ancho=Math.round((ancho*25)/100);
-	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho+10;
-	loadBD();
-	setTimeout("getSesionBD();",200);
-	setTimeout("loadUserMenu(0);",300);
-	loadComerciosWS();	
-	 
-	setTimeout("getComerciosBD();",1000);
 	
-	*/
 }
 function deviceListoNoSesion()
 {
-	/*loadBD();
-	getSesionBD();*/
+	
 	getSesionPHP(3);
-	/*//alert($("#contenido").width());
-	var ancho=$("#contenido").width();
-	ancho=Math.round((ancho*25)/100);
-	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho+10;
-	//alert("paso:dev");
-	
-			
-	loadBD();
-	setTimeout("getSesionBD();",200);
-	setTimeout("loadUserMenu(1);",300);
-	loadComerciosWS();		 
-	setTimeout("getComerciosBD();",1000);
-	
-	*/
 	
 }
 function loadUserMenu(tip)
@@ -1318,11 +1268,12 @@ function loadOfertasInicio()
 
 function loadOfertaDetalle(id_oferta)
 {
-	var ancho=$("#mappage").width();
+	var ancho2=$("#mappage").width();
 
-	ancho=Math.round((ancho*25)/100);
+	ancho=Math.round((ancho2*95)/100);
 	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho-10;
+	IMG_HEIGHT=ancho-((ancho*30)/100);
+	
 	$.mobile.loading( 'show', {
 				text: 'Cargando...',
 				textVisible: true,
@@ -1334,8 +1285,44 @@ function loadOfertaDetalle(id_oferta)
 				,function(){
 					
 					$('#contendor_contenido').trigger('create');
+					try
+					{
+ 						//startRotator("#rotator");
+        		prepareRotator("#rotator");
+        	}catch(e)
+        	{ 	}
 					$.mobile.loading( 'hide');	
 					
 				}
 			);
+}
+      function rotateBanners(elem) {
+  var active = $(elem+" img.active");
+  
+  var next = active.next();
+  if (next.length == 0) 
+    next = $(elem+" img:first");
+  active.removeClass("active").fadeOut("slow");
+  next.addClass("active").fadeIn("slow");
+}
+
+function prepareRotator(elem) {
+  $(elem+" img").fadeOut(0);
+  $(elem+" img:first").fadeIn(0).addClass("active");
+}
+
+function startRotator(elem) {
+  prepareRotator(elem);
+  setInterval("rotateBanners('"+elem+"')", 2500);
+}
+function nextRotator(elem) {
+
+ rotateBanners(''+elem+'');
+}
+    function loadBanner(elem) {
+ 
+ var active = $("#rotator img.active");
+	next = $("#"+elem);    
+  active.removeClass("active").fadeOut("slow");
+  next.addClass("active").fadeIn("slow");
 }
