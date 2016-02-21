@@ -23,7 +23,19 @@
    			      <link rel="stylesheet" href="css/style.css" />
    			
 <script>
-
+	window.onload = function() {
+    var alto=$("#contenido").height();
+    var ancho=$("#contenido").width();
+    alto=alto - (alto *15/100);
+ 		$('.body_inicio').css('width',ancho);
+ 		$('.body_inicio').css('height',alto);
+ 		
+ 		
+}
+$.mobile.document.on( "click", "#open-popupArrow", function( evt ) {
+    $( "#popupArrow" ).popup( "open", { x: evt.pageX, y: evt.pageY } );
+    evt.preventDefault();
+});
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
 document.addEventListener("deviceready", deviceListoNoSesion, false);
@@ -41,7 +53,11 @@ document.addEventListener("deviceready", deviceListoNoSesion, false);
     	  	<div data-role="popup" id="myPopup">
 							<p>This is a completely basic popup, no options set.						</p>
 					</div>
-				
+				<div data-role="popup" id="popupArrow" data-arrow="true">
+					<p>Para acceder a las Ofertas del D&iacute;a debes reg&iacute;strarte <a href="javascript:loadRegistro();">AQU&Iacute;</a>.</p>
+					
+					</div>
+				<img src="img/fondo.png" class="body_inicio">
 				<!--img src="img/fondo.png" class="body_inicio"-->
 				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
 						  		

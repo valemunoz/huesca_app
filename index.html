@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="css/style.mobile.css" type="text/css">
         <link rel="stylesheet" href="css/style.mobile-jq.css" type="text/css">
    			      <link rel="stylesheet" href="css/style.css" />
+   			      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4df9c13e4f980b8c"></script>
    			
 <script>
 	window.onload = function() {
@@ -35,7 +36,10 @@
  		//$('.fondo_h').css('height',alto_h);
  		
 }
-
+$.mobile.document.on( "click", "#open-popupArrow", function( evt ) {
+    $( "#popupArrow" ).popup( "open", { x: evt.pageX, y: evt.pageY } );
+    evt.preventDefault();
+});
 /*window.onresize = function() {
         var alto=$("#contenido").height();
     var ancho=$("#contenido").width();
@@ -62,23 +66,16 @@ document.addEventListener("deviceready", deviceListoInicio, false);
 				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
 						<div id=cont_static></div>
 					</div>
+					<div data-role="popup" id="popupArrow" data-arrow="true">
+					<p>Para acceder a las Ofertas del D&iacute;a debes reg&iacute;strarte <a href="javascript:loadRegistro();">AQU&Iacute;</a>.</p>
+					
+					</div>
 				
 				<img src="img/fondo.png" class="body_inicio">
 				<div id="fondo">
 					<div id="div_logo">
 						<a onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });"><img class="logo_prin" src="img/logo.png" width=30%></a>
-						<!--table width="40%" cellspacing="0" cellpadding="0" border="0" align="right">
-<tbody>
-<tr>
-<td align="right">
-<a class="link_reg2" href="javascript:loadSesion();" >Iniciar Sesión</a>
-|
-<a class="link_reg" href="javascript:loadRegistro();" >Reg&iacute;strate Gratis<img src="img/login.png"></a>
-</td>
-<td width="30" align="right">
-</tr>
-</tbody>
-</table-->
+
 						<div class="link_reg2"><a class=link_reg href="javascript:loadSesion();" >Iniciar Sesión | </a><a class=link_reg href="javascript:loadRegistro();" >Reg&iacute;strate Gratis<img src="img/login.png"></a></div>
 					</div>
 				
@@ -102,14 +99,14 @@ document.addEventListener("deviceready", deviceListoInicio, false);
 			<div data-role="navbar" id="menuInfer">
 				<ul>
 				
-			<li><a class='li_a li_opaco' ><img width=50px src="img/ofertas.png"></a></li>
+			<li><a class='li_a li_opaco' href="#" id="open-popupArrow" class="clickable-area"><img width=50px src="img/ofertas.png"></a></li>
 			<li><a class='li_b' href='javascript:loadComercio();' ><img width=50px src="img/comercio_dia.png"></a></li>
 			<li><a class='li_a' href="javascript:loadComerciosAsociados();" data-transition="flow"><img width=50px src="img/comercios.png"></a></li>
 			<li><a class='li_b' href="javascript:loadMapa();"><img width=50px src="img/mapa.png"></a></li>
 			<li><a class='li_a' href="javascript:loadBuscador();" data-transition="flow"><img width=50px src="img/buscador.png"></a></li>	
 				</ul>
 			</div><!-- /navbar -->
-    	V0.7<img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
+    	V0.8<img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
 		</div><!-- /footer -->
  </div>
 

@@ -23,7 +23,10 @@
    			      <link rel="stylesheet" href="css/style.css" />
    			
 <script>
-
+$.mobile.document.on( "click", "#open-popupArrow", function( evt ) {
+    $( "#popupArrow" ).popup( "open", { x: evt.pageX, y: evt.pageY } );
+    evt.preventDefault();
+});
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
 //document.addEventListener("deviceready", deviceListoNoSesion, false);
@@ -39,6 +42,10 @@ document.addEventListener("online", online, false);
    	  	<div data-role="popup" id="myPopup_static" class="ui-content" style="max-width:280px" data-dismissible="false">
 				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
 						<div id=cont_static></div>
+					</div>
+					<div data-role="popup" id="popupArrow" data-arrow="true">
+					<p>Para acceder a las Ofertas del D&iacute;a debes reg&iacute;strarte <a href="javascript:loadRegistro();">AQU&Iacute;</a>.</p>
+					
 					</div>
    	  <div id="header_fondo"></div>	
     	  

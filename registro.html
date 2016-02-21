@@ -23,6 +23,10 @@
    			      <link rel="stylesheet" href="css/style.css" />
    			
 <script>
+$.mobile.document.on( "click", "#open-popupArrow", function( evt ) {
+    $( "#popupArrow" ).popup( "open", { x: evt.pageX, y: evt.pageY } );
+    evt.preventDefault();
+});
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
 document.addEventListener("deviceready", deviceListoNoSesion, false);

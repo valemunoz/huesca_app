@@ -1,6 +1,7 @@
 var map;
 var PATH_QUERY="http://desarrollo.chilemap.cl/huesca/query.php";
 var ONLINE=100;
+var offl=false;
 var _wsUrl = "http://comerciohuescaws.e-osca.com/WebService.asmx";
 var ticket=0;
 //var db = openDatabase('MyDB', '1.0', 'My Sample DB', 10000 * 1024);
@@ -24,8 +25,10 @@ var WL_QUALIFY=0;
 var hasRated = true; //aqui
 var globalWidth = 0; //aqui
 var COM_GLOBAID=0;
+var COM_PAGE=1;
+var COM_REG_PAG=0;
 $(window).load(function(){
-	$( "#mappage" ).click(function() {
+	$( "#contenido" ).click(function() {
   
   $("#menuInfer").fadeToggle("slow");
 });
@@ -33,23 +36,29 @@ $(window).load(function(){
    $("[data-role=footer]").fixedtoolbar({ tapToggle: true });
    $("[data-role=footer]").fixedtoolbar({ fullscreen: true });
 });*/
+
 });  
 function offline()
 {
 	
-	ONLINE=false;
-	window.location.href='offline.html';
+	if(ONLINE!=false && offl==false)
+	{
+		offl=true;
+		ONLINE=false;
+		window.location.href='offline.html';
+	}
 }
 function online()
 {
 	
-	if(ONLINE==false && ONLINE !=100)
+	if(ONLINE==false)
 	{
 		ONLINE=true;
 		window.location.href='index.html';
 	}
 	ONLINE=true;
 }
+
 function openPopstatic(contenido,tiempo)
 {
 	$("#cont_static").html(contenido);
@@ -709,7 +718,7 @@ function loadMenuOff()
 
 	var menu ="<div data-role='navbar' id='menuInfer'><ul>";
 	 
-	menu +="		<li><a class='li_a li_opaco' href='#' data-transition='flow'><img width=50px src='img/ofertas.png'></a></li>";
+	menu +="		<li><a class='li_a li_opaco' href='#' id='open-popupArrow' class='clickable-area' data-transition='flow'><img width=50px src='img/ofertas.png'></a></li>";
 	menu +="		<li><a class='li_b ' href='javascript:loadComercio();'  href='#' data-transition='flow'><img width=50px src='img/comercio_dia.png'></a></li>";
 	menu +="		<li><a class='li_a' href='javascript:loadComerciosAsociados();' data-transition='flow'><img width=50px src='img/comercios.png'></a></li>";
 	menu +="		<li><a class='li_b' href='javascript:loadMapa();'><img width=50px src='img/mapa.png'></a></li>";
@@ -1357,4 +1366,17 @@ function validaRecuper()
 		{
 			openPopstatic(msg,0);
 		}
+}
+
+
+function showPaginaCom(pagina)
+{
+	if(pagina > COM_REG_PAG)
+	{
+		pagina=1;
+	}
+	
+	COM_PAGE=pagina;
+	$(".pag_dv").fadeOut("fast");
+	$("#pag_"+pagina).fadeIn("slow");
 }
