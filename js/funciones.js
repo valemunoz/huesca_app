@@ -20,6 +20,20 @@ var COM_IMG1=Array();
 var COM_IMG2=Array();
 var IMG_WIDTH=200;
 var IMG_HEIGHT=150;
+var WL_QUALIFY=0;
+var hasRated = true; //aqui
+var globalWidth = 0; //aqui
+var COM_GLOBAID=0;
+$(window).load(function(){
+	$( "#mappage" ).click(function() {
+  
+  $("#menuInfer").fadeToggle("slow");
+});
+/*$(document).bind("pageinit", function() {
+   $("[data-role=footer]").fixedtoolbar({ tapToggle: true });
+   $("[data-role=footer]").fixedtoolbar({ fullscreen: true });
+});*/
+});  
 function offline()
 {
 	
@@ -68,6 +82,9 @@ function deviceListoInicio()
 {
 
 	getSesionPHP(1);	
+	
+  
+
 }
 function loadLogin()
 {
@@ -313,6 +330,7 @@ function validaUsuario()
 	fec=$.trim(document.getElementById("fec").value);
 	clv=$.trim(document.getElementById("clv").value);
 	sexo=$.trim(document.getElementById("sexo").value);
+	
 	var valida=true;
 	var msg="";
 	if(nombre=="" || app=="" || mail=="" || fec=="" || sexo=="" || clv=="")
@@ -673,7 +691,7 @@ function loadOferta()
 function loadMenu()
 {
 	
-	var menu ="<div data-role='navbar'><ul>";
+	var menu ="<div data-role='navbar' id='menuInfer'><ul>";
 	 
 	menu +="		<li><a class='li_a' href='javascript:loadOferta();' data-transition='flow'><img width=50px src='img/ofertas.png'></a></li>";
 	menu +="		<li><a class='li_b' href='javascript:loadComercio();' data-transition='flow'><img width=50px src='img/comercio_dia.png'></a></li>";
@@ -688,8 +706,8 @@ function loadMenu()
 function loadMenuOff()
 {
 	
-	
-	var menu ="<div data-role='navbar'><ul>";
+
+	var menu ="<div data-role='navbar' id='menuInfer'><ul>";
 	 
 	menu +="		<li><a class='li_a li_opaco' href='#' data-transition='flow'><img width=50px src='img/ofertas.png'></a></li>";
 	menu +="		<li><a class='li_b ' href='javascript:loadComercio();'  href='#' data-transition='flow'><img width=50px src='img/comercio_dia.png'></a></li>";
@@ -1066,11 +1084,13 @@ function loadOfertaDia() //getOfertasDia
                     
 	
 }
-function loadComercioDetalleID(id_comercio)
-{
-	var ancho=$("#mappage").width();
 
-	ancho=Math.round((ancho*35)/100);
+function loadComercioDetalleID(comercio)
+{
+	
+	var ancho_or=$("#mappage").width();
+
+	ancho=Math.round((ancho_or*35)/100);
 	IMG_WIDTH=ancho;
 	IMG_HEIGHT=ancho-10;
 	$.mobile.loading( 'show', {
@@ -1080,7 +1100,7 @@ function loadComercioDetalleID(id_comercio)
 				html: ""
 			});
 	$("#contendor_contenido").load(PATH_QUERY, 
-			{tipo:12, comercio:id_comercio, img_w:IMG_WIDTH, img_h:IMG_HEIGHT} 
+			{tipo:12, comercio:comercio, img_w:IMG_WIDTH, img_h:IMG_HEIGHT, ancho:ancho_or} 
 				,function(){
 					
 					$('#contendor_contenido').trigger('create');
@@ -1088,81 +1108,8 @@ function loadComercioDetalleID(id_comercio)
 					
 				}
 			);
-	/*
-//alert(id_comercio +":"+COM_ID.length);
-$.mobile.loading( 'show', {
-				text: 'Cargando...',
-				textVisible: true,
-				theme: 'a',
-				html: ""
-			});
-if(COM_ID.length >0)
-{
-		for(a=0; a < COM_ID.length; a++)
-    {
-			if(COM_ID[a]==id_comercio)
-			{
-				
-      	$("#titulo_div").html(COM_NOMBRE[a].toUpperCase());
-		  	try
-		  	{
-		  		var imagen_com=COM_LOGO[a];
-		  		//var imagen_com="http://comerciohuesca.e-osca.com/imagen/{modo}/{ancho}/{alto}/01022016103822.jpg";
-		  		imagen_com=imagen_com.replace("{modo}","miniatura");
-		  		imagen_com=imagen_com.replace("{ancho}",IMG_WIDTH);
-		  		imagen_com=imagen_com.replace("{alto}",IMG_HEIGHT);
-		  	}catch(e){}
-		  	
-		  														
-        											
-				var html_esp='	</br>';
-		  	html_esp+='<div id="div_contenido_com">';
-				html_esp+='<div id="left_cont"> '+COM_DESCRIPCION[a];		  												
-				
-				html_esp+='</div>';
-				//alert(COM_DESCRIPCION[a]);
-				html_esp+='</br></br><br>';
-		  	html_esp+='<strong>Tel&eacute;fono:</strong> '+COM_TELEFONO[a];
-				html_esp+='<br><strong>Fax:</strong> '+COM_FAX[a];
-				
-				html_esp+='<br><strong>email:</strong> '+COM_MAIL[a];
-				html_esp+='<br><strong>web:</strong> '+COM_WEB[a];
-				html_esp+='<br><strong>Direcci&oacute;n:</strong> '+COM_DIRECCION[a];
-				
-				
-				html_esp+='</div>';
-				try
-				{
-        	var imagen_b=COM_IMG1[a];
-        
-		  		imagen_b=imagen_b.replace("{modo}","miniatura");
-		  		imagen_b=imagen_b.replace("{ancho}",IMG_WIDTH);
-		  		imagen_com=imagen_b.replace("{alto}",IMG_HEIGHT);	
-		  		//alert(imagen_com);
-		  		html_esp+='<div id="foto1"><img class=img_com src="'+COM_IMG1[a]+'"></div>';
-					
-				}catch(e){}
-				try
-					{
-        		var imagen_b=COM_IMG2[a];
-        	
-		  			imagen_b=imagen_b.replace("{modo}","miniatura");
-		  			imagen_b=imagen_b.replace("{ancho}",IMG_WIDTH);
-		  			imagen_com=imagen_b.replace("{alto}",IMG_HEIGHT);	
-		  			html_esp+='<div id="foto2"><img class=img_com src="'+COM_IMG2[a]+'"></div>';
-					}catch(e){}
-					html_esp+='<div id="espacio"><br>';
-					html_esp+='</div>';
-				 $("#contendor_contenido").html(html_esp);
-     }
-  }
-}else
-{
-	setTimeout("loadComercioDetalleID(id_comercio);",500);
-}
-		  															
-$.mobile.loading( 'hide');			  															
-		  */													
+	
+			
 }
 function getDatosComercio(id_comercio)// a WS
 {
@@ -1269,7 +1216,7 @@ function loadOfertasInicio()
 function loadOfertaDetalle(id_oferta)
 {
 	var ancho2=$("#mappage").width();
-
+	WL_QUALIFY=0;
 	ancho=Math.round((ancho2*95)/100);
 	IMG_WIDTH=ancho;
 	IMG_HEIGHT=ancho-((ancho*30)/100);
@@ -1281,7 +1228,7 @@ function loadOfertaDetalle(id_oferta)
 				html: ""
 			});
 	$("#contendor_contenido").load(PATH_QUERY, 
-			{tipo:13, id_oferta:id_oferta, img_w:IMG_WIDTH, img_h:IMG_HEIGHT} 
+			{tipo:13, id_oferta:id_oferta, img_w:IMG_WIDTH, img_h:IMG_HEIGHT, ancho:ancho2} 
 				,function(){
 					
 					$('#contendor_contenido').trigger('create');
@@ -1325,4 +1272,89 @@ function nextRotator(elem) {
 	next = $("#"+elem);    
   active.removeClass("active").fadeOut("slow");
   next.addClass("active").fadeIn("slow");
+}
+
+function loadValoracion(valor, stilo,div, stilo)
+{
+
+	 		$(".valora_estrella_"+div).jRating({
+				length:5,
+				decimalLength:1,
+				canRateAgain : true,
+	  		nbRates : 50,
+	  		showRateInfo:false,
+	  		isDisabled : false,
+				/*onSuccess : function(){
+				  alert('Success : your rate has been saved :)');
+				},
+				onError : function(){
+				  alert('Error : please retry');
+				}*/
+			});
+		if(valor > 0)
+		{
+			estrella=valor*22;
+			$("#jr"+div).css("width",estrella);
+		}
+}
+
+function valorar(oferta)
+{
+	
+	if(WL_QUALIFY==0)
+	{
+		openPopstatic("No ha definido una valoraci&oacute;n.",0);
+	}else
+	{
+		$.mobile.loading( 'show', {
+				text: 'Enviado...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+			$("#output").load(PATH_QUERY, 
+			{tipo:14, id_oferta:oferta, valor:WL_QUALIFY} 
+				,function(){
+					
+					
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
+	}
+}
+function loadRecuperar()
+{
+	window.location.href="recuperar.html";
+}
+function validaRecuper()
+{
+	var msg="";
+	var valida=true;
+	mail=$.trim(document.getElementById("user_rec").value);
+	if(!validarEmail(mail) || mail=="")
+	{
+		valida=false;
+		msg +="Correo electronico no es valido.<br>";
+	}
+	if(valida)
+	{
+		$.mobile.loading( 'show', {
+				text: 'Validando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+			$("#output").load(PATH_QUERY, 
+			{tipo:15, mail:mail} 
+				,function(){				
+					
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
+	}else
+		{
+			openPopstatic(msg,0);
+		}
 }

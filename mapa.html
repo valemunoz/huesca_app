@@ -3,34 +3,28 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <title>Huesca</title>
         <link rel="shortcut icon" href="images/icon.png">
-        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no; target-densityDpi=device-dpi"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta name="apple-mobile-web-app-capable" content="yes">
 				<meta name="author" content="Chilemap.cl" />     
          <link rel="stylesheet" href="css/themes/themes.css" />
   			<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
         <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.0-rc.1.min.css" />
                 
-        <script src="cordova.js"></script>       
-        <script src="js/funciones.js"></script>
+        <script src="cordova.js"></script>
+       
+        <script src="js/jquery-1.10.2.min.js"></script> 
+        <script src="js/soapclient.js"></script>
+				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
 				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-				<script src="js/jquery-1.10.2.min.js"></script> 
-				<script src="js/soapclient.js"></script>
-				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 				
+				<script src="js/funciones.js"></script>
 				
         <link rel="stylesheet" href="css/style.mobile.css" type="text/css">
         <link rel="stylesheet" href="css/style.mobile-jq.css" type="text/css">
    			      <link rel="stylesheet" href="css/style.css" />
-   			      <!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtr4GzcqpxpviZWNnAbYVgqm8mXfQJIvk&callback=initMap2&sensor=false"></script-->
-   			      
-							<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+   			      <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
    			
 <script>
-$.mobile.loading( 'show', {
-				text: 'Cargando...',
-				textVisible: true,
-				theme: 'a',
-				html: ""
-			});
+
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
 document.addEventListener("deviceready", deviceListoNoSesion, false);
@@ -43,10 +37,13 @@ document.addEventListener("deviceready", deviceListoNoSesion, false);
    		
    		
    	  <div data-role="content" id="contenido" >
-   	  <div id="header_fondo"></div>	
-    	  	<div data-role="popup" id="myPopup">
-							<p>This is a completely basic popup, no options set.						</p>
+   	  	<div data-role="popup" id="myPopup_static" class="ui-content" style="max-width:280px" data-dismissible="false">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+						<div id=cont_static></div>
 					</div>
+   	  <div id="header_fondo"></div>	
+    	  
+					
 				
 				<!--img src="img/fondo.png" class="body_inicio"-->
 				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
@@ -59,38 +56,38 @@ document.addEventListener("deviceready", deviceListoNoSesion, false);
 				
 					
 					<div id="titulo_div">
-						MAPA DE COMERCIOS
+						<span id="titulo_txt_div">MAPA DE COMERCIOS</span>
 					</div>
 				 <div id="contendor_contenido">
+				 	<p>Pulse sobre el comercio que desea recibir m&aacute;s informaci&oacute;n. </p><div class="separador"></div>
+   					 <div id="mapa"></div>
 
-        <p>Pulse sobre el comercio que desea recibir m&aacute;s informaci&oacute;n. </p>
-<div class="separador"></div>
-
-
- <div id="mapa">
- </div>
         
+        
+
+      
+
 </div>
 					
 			
                  
     	</div>
-    	 	<div data-role="footer" data-id="foo1" data-position="fixed" data-fullscreen="true" id="foot_page" >
+    	<div data-role="footer" data-id="foo1" data-position="fixed" data-fullscreen="true" id="foot_page" data-tap-toggle="false" >
     	<div id="menuNav"></div>
 
 <img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
 </div><!-- /footer -->
     	
     	<script>
- 		 				setTimeout("initMap();",500);
- 		 				</script>
+   
+    			setTimeout("initMap();",500);
+   
+    		
+    		</script>
     	  
  </div>
 
     
  		 			<div id=output></div>
- 		 			
     </body>
-</html>
-
 </html>

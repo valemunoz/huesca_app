@@ -16,92 +16,92 @@
         <script src="js/soapclient.js"></script>
 				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
 				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-				<link rel="stylesheet" href="jrating/jRating.jquery.css" type="text/css" />
-				<script type="text/javascript" src="jrating/jRating.jquery.js"></script>
-				
 				<script src="js/funciones.js"></script>
-				
-
-
-				
 				
         <link rel="stylesheet" href="css/style.mobile.css" type="text/css">
         <link rel="stylesheet" href="css/style.mobile-jq.css" type="text/css">
    			      <link rel="stylesheet" href="css/style.css" />
    			
+<script>
 
+document.addEventListener("offline", offline, false);
+document.addEventListener("online", online, false);
+//document.addEventListener("deviceready", deviceListoNoSesion, false);
+
+</script>
     </head>
     <body>
     <div data-role="page" id="mappage" data-theme="a">
 		    
    		
    		
-   	  <div data-role="content" id="contenido"  >
-   	  <div id="header_fondo"></div>	
-    	  	<div data-role="popup" id="myPopup">
-							<p>This is a completely basic popup, no options set.						</p>
-					</div>
-					<div data-role="popup" id="myPopup_static" class="ui-content" style="max-width:280px" data-dismissible="false">
+   	  <div data-role="content" id="contenido" >
+   	  	<div data-role="popup" id="myPopup_static" class="ui-content" style="max-width:280px" data-dismissible="false">
 				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
 						<div id=cont_static></div>
 					</div>
+   	  <div id="header_fondo"></div>	
+    	  
+					
 				
-				
+				<!--img src="img/fondo.png" class="body_inicio"-->
 				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
 						  		
 						  			<span id="barra_izq"></span>
-						  			<span id="barra_der"></span>
+						  			<span id="barra_der"><a href="javascript:loadSesion();" class="link_op">Inicia Sesion</a> | <a class=link_reg href="javascript:loadRegistro();" >Reg&iacute;strate Gratis</a></span>
 						  		
 						  		
 								</div>
 				
 					
 					<div id="titulo_div">
-						<span id="titulo_txt_div">COMERCIOS ASOCIADOS EN HUESCA</span>
+						<span id="titulo_txt_div">¿Has olvidado tu contraseña?</span>
 					</div>
-				 <div id="contendor_contenido">
-				 	 Listado de comercios asociados en este momento en el  Comercio de Huesca.
-<div class="separador"></div>
-
-
-																					
-                        								</script>
-<br />
-
-        <div id="centro_cont"></div>
-       
-        
-</div>
 					
+					
+				 <div id="contendor_contenido">
+				 	<p>Por favor, introduzca el email que utilizó para registrarse y le enviaremos su nueva contraseña.</p><div class="separador"></div>
+   			<div class="fondo_login">
+
+
+            <div class="texto_buscador">cORREO ELECTRÓNICO</div>
+
+          <div class="input_buscador">	<input name="user_rec" id="user_rec" type="text" /></div>
+       
+          <div class="separador"></div>
+    
+       
+          <div class="input_LOGIN">
+        <a href="javascript:validaRecuper();" class="boton_login">RECUPERAR</a>
+      </div>
+          <div class="separador"></div>
+      </div>
+
+        <br />
+
+        <div class="separador"></div>
+
+   
+        
+
+      
+
+</div>
+
 			
                  
     	</div>
-    	 	<div data-role="footer" data-id="foo1" data-position="fixed" data-fullscreen="true" id="foot_page" data-tap-toggle="false">
-    	 		<div id="menuNav"></div>
-    		
-		  
-				
+    	<div data-role="footer" data-id="foo1" data-position="fixed" data-fullscreen="true" id="foot_page" data-tap-toggle="false" >
+    	<div id="menuNav"></div>
 
-<img height=50px src="img/logo_pie_ayto.png" >
+<img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
 </div><!-- /footer -->
-<script>
-
-document.addEventListener("offline", offline, false);
-document.addEventListener("online", online, false);
-document.addEventListener("deviceready", deviceListoNoSesion, false);
-getSesionPHP(3);
-</script>
-<script>
-	
-	
-	loadComerciosAsos();
-	</script>
     	
-	
+    	
+    	  
  </div>
 
     
  		 			<div id=output></div>
- 		 			
     </body>
 </html>

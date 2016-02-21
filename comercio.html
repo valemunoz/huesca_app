@@ -11,10 +11,19 @@
         <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.0-rc.1.min.css" />
                 
         <script src="cordova.js"></script>
-				<script src="js/funciones.js"></script>
-				<script src="js/jquery-1.10.2.min.js"></script> 
+       
+        <script src="js/jquery-1.10.2.min.js"></script> 
+        <script src="js/soapclient.js"></script>
 				<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> 
 				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+				<link rel="stylesheet" href="jrating/jRating.jquery.css" type="text/css" />
+				<script type="text/javascript" src="jrating/jRating.jquery.js"></script>
+				
+				<script src="js/funciones.js"></script>
+				
+
+
+				
 				
         <link rel="stylesheet" href="css/style.mobile.css" type="text/css">
         <link rel="stylesheet" href="css/style.mobile-jq.css" type="text/css">
@@ -24,7 +33,8 @@
 
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
-document.addEventListener("deviceready", deviceListo, false);
+document.addEventListener("deviceready", deviceListoNoSesion, false);
+
 
 </script>
     </head>
@@ -49,20 +59,24 @@ document.addEventListener("deviceready", deviceListo, false);
 								</div>
 				
 					
-				
-				<hr class="linea">
-				<br />&nbsp;
-				<br />&nbsp;
+					
+				 <div id="contendor_contenido_com">
+
+        
+					</div>
 					
 			
-                 
+                <script>
+                	setTimeout("getSesionPHP(4);",1000);
+    		
+    		setTimeout("loadComercioDetalleIDCont();",500);
+    		</script> 
     	</div>
-    	 	<div data-role="footer" data-id="foo1" data-position="fixed" data-fullscreen="true" id="foot_page" >
-    	<div id="menuNav"></div>
+    	 	<div data-role="footer" data-id="foo1" data-position="fixed" data-fullscreen="true" id="foot_page" data-tap-toggle="false">
+    		<div id="menuNavCom"></div>
 
-<img height=50px src="img/logo_pie_ayto.png">
+<img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
 </div><!-- /footer -->
-    	
     	
     	  
  </div>

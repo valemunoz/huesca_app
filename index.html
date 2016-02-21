@@ -35,12 +35,7 @@
  		//$('.fondo_h').css('height',alto_h);
  		
 }
-$(window).load(function(){
-$(document).bind("pageinit", function() {
-   $("[data-role=footer]").fixedtoolbar({ tapToggle: true });
-   $("[data-role=footer]").fixedtoolbar({ fullscreen: true });
-});
-});  
+
 /*window.onresize = function() {
         var alto=$("#contenido").height();
     var ancho=$("#contenido").width();
@@ -97,12 +92,14 @@ document.addEventListener("deviceready", deviceListoInicio, false);
 					</div>			
 					
 					<br>
+					
 				</div>
-                 
+       
+    
     	</div>
-      <div data-role="footer" data-id="foo1" data-position="fixed" data-fullscreen="true" id="foot_page" >
+      <div data-role="footer" data-id="foo1" data-position="fixed" id="foot_page" data-tap-toggle="false"> <!-- data-fullscreen="true"-->
     		
-			<div data-role="navbar">
+			<div data-role="navbar" id="menuInfer">
 				<ul>
 				
 			<li><a class='li_a li_opaco' ><img width=50px src="img/ofertas.png"></a></li>
@@ -112,7 +109,7 @@ document.addEventListener("deviceready", deviceListoInicio, false);
 			<li><a class='li_a' href="javascript:loadBuscador();" data-transition="flow"><img width=50px src="img/buscador.png"></a></li>	
 				</ul>
 			</div><!-- /navbar -->
-    	V0.5<img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
+    	V0.7<img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
 		</div><!-- /footer -->
  </div>
 

@@ -23,12 +23,14 @@
    			      <link rel="stylesheet" href="css/style.css" />
    			
 <script>
+
 $.mobile.loading( 'show', {
 				text: 'Cargando...',
 				textVisible: true,
 				theme: 'a',
 				html: ""
 			});
+			
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
 document.addEventListener("deviceready", deviceListo, false);
@@ -66,14 +68,14 @@ document.addEventListener("deviceready", deviceListo, false);
 			
                  
     	</div>
-    	 	<div data-role="footer" data-id="foo1" data-position="fixed" data-fullscreen="true" id="foot_page" >
+    	 	<div data-role="footer" data-id="foo1" data-position="fixed" data-fullscreen="true" id="foot_page" data-tap-toggle="false" >
     		
 <div id="menuNav"></div>
 <img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
 </div><!-- /footer -->
     	
  <script>
- 	//setTimeout("loadOfertasDia();loadComerciosDia();",1000);
+ 	
  	loadOfertasInicio();
  	</script>   	
     	  
