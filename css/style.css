@@ -9,7 +9,7 @@
 {
 	/*overflow-x:hidden !important; */
 	
-	
+	height:90% !important;
 	/*height:80% !important;
 	position:absolute;*/
 }
@@ -107,12 +107,12 @@ background: url("../img/fondo.png")  no-repeat fixed center !important;
 {
 	position:relative;
 	margin-top:10% !important;
-	height:140px !important;
+	
 	width:80% !important;
 	background-color: #f0f0f0 !important;
 	margin:0 auto;
 	color: #6d0135;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
 	padding: 1% 2%;
 	
@@ -196,42 +196,36 @@ src: url('ostrich/ostrich-light.ttf') !important;
 		-moz-opacity: 0.5 !important;
 		opacity: 0.5 !important;
 }
-/*#titulo_div
+
+#titulo_div
 {
-	/*opacity: 0.99 !important;
-	
-	
-	line-height: 3.3em;
-	*/
-	
 	opacity: 0.99 !important;
-	padding-right: 10px;
-	font-size:10px !important;
 	margin-top:5% !important;
-	height:45px !important;
-	width:95% !important;
-	margin-left:10px;
+	height:34px !important;
+	width:66% !important;
+	margin-left:6px;
 	color: #ffffff !important;
-	
+	font-size:9px !important;
 	
 	padding:3px;
-	
+	padding-right: 10px;
 	
 	text-align:left !important;
 	
 	background: url("../img/h1.png");
     		background-repeat: no-repeat;
-    		background-size:  95% 45px !important; 
+    		background-size:  66% 34px !important; 
 	
-}*/
+}
+
 @media (max-width: 350px) and (min-width: 0px)
 {
 #titulo_div
 {
 	opacity: 0.99 !important;
 	margin-top:5% !important;
-	height:45px !important;
-	width:97% !important;
+	height:35px !important;
+	width:90% !important;
 	margin-left:10px;
 	color: #ffffff !important;
 	font-size:9px !important;
@@ -243,7 +237,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	
 	background: url("../img/h1.png");
     		background-repeat: no-repeat;
-    		background-size:  97% 45px !important; 
+    		background-size:  80% 35px !important; 
 	
 }
 }
@@ -277,7 +271,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 {
 	opacity: 0.99 !important;
 	margin-top:5% !important;
-	height:35px !important;
+	height:45px !important;
 	width:80% !important;
 	margin-left:10px;
 	color: #ffffff !important;
@@ -288,7 +282,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	
 	background: url("../img/h1.png");
     		background-repeat: no-repeat;
-    		background-size:  80% 35px !important; 
+    		background-size:  80% 45px !important; 
 	
 }
 }
@@ -432,7 +426,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 }
 
 
-#barra_izq
+#barra_izq ,barra_izq2
 {
 	float:left;
 	 
@@ -442,7 +436,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	text-decoration:none !important;
 	color:#CC707A !important;
 }
-#barra_der
+#barra_der, barra_der2
 {
 	float:right !important;
 	color:#CC707A;
@@ -632,7 +626,8 @@ text-align:center;
 	clear:both;
 	background-color: #6D0135 !important;
 	height:5px !important;
-	margin-top:10px !important;
+	margin-top:-3px !important;
+	display:none;
 }
 #espacio
 {

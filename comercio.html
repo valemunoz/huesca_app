@@ -52,8 +52,8 @@ document.addEventListener("deviceready", deviceListoNoSesion, false);
 				<!--img src="img/fondo.png" class="body_inicio"-->
 				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
 						  		
-						  			<span id="barra_izq"></span>
-						  			<span id="barra_der"></span>
+						  			<span id="barra_izq2"></span>
+						  			<span id="barra_der2"></span>
 						  		
 						  		
 								</div>
@@ -64,17 +64,15 @@ document.addEventListener("deviceready", deviceListoNoSesion, false);
 
         
 					</div>
-					
-			
-                <script>
-                	setTimeout("getSesionPHP(4);",1000);
-    		
-    		setTimeout("loadComercioDetalleIDCont();",500);
-    		</script> 
     	</div>
+    	 <script>
+                	
+    		
+							setTimeout("getSesionPHP(4);loadComercioDetalleIDCont();",700);
+    		</script> 
     	 	<div data-role="footer" data-id="foo1" data-position="fixed" data-fullscreen="true" id="foot_page" data-tap-toggle="false">
     		<div id="menuNavCom"></div>
-
+<hr class="linea" />
 <img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
 </div><!-- /footer -->
     	

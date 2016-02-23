@@ -27,10 +27,14 @@ var globalWidth = 0; //aqui
 var COM_GLOBAID=0;
 var COM_PAGE=1;
 var COM_REG_PAG=0;
+var CM_MIGA=0;
+var CM_MIGA_ID=0;
 $(window).load(function(){
 	$( "#contenido" ).click(function() {
   
   $("#menuInfer").fadeToggle("slow");
+
+  $(".linea").fadeToggle("slow");
 });
 /*$(document).bind("pageinit", function() {
    $("[data-role=footer]").fixedtoolbar({ tapToggle: true });
@@ -697,7 +701,7 @@ function loadOferta()
 	//window.location.href='oferta_detalle.html';
 	window.location.href='oferta_dia.html';
 }
-function loadMenu()
+function loadMenu(div)
 {
 	
 	var menu ="<div data-role='navbar' id='menuInfer'><ul>";
@@ -714,7 +718,6 @@ function loadMenu()
 }
 function loadMenuOff()
 {
-	
 
 	var menu ="<div data-role='navbar' id='menuInfer'><ul>";
 	 
@@ -1094,32 +1097,7 @@ function loadOfertaDia() //getOfertasDia
 	
 }
 
-function loadComercioDetalleID(comercio)
-{
-	
-	var ancho_or=$("#mappage").width();
 
-	ancho=Math.round((ancho_or*35)/100);
-	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho-10;
-	$.mobile.loading( 'show', {
-				text: 'Cargando...',
-				textVisible: true,
-				theme: 'a',
-				html: ""
-			});
-	$("#contendor_contenido").load(PATH_QUERY, 
-			{tipo:12, comercio:comercio, img_w:IMG_WIDTH, img_h:IMG_HEIGHT, ancho:ancho_or} 
-				,function(){
-					
-					$('#contendor_contenido').trigger('create');
-					$.mobile.loading( 'hide');	
-					
-				}
-			);
-	
-			
-}
 function getDatosComercio(id_comercio)// a WS
 {
 	
@@ -1222,36 +1200,7 @@ function loadOfertasInicio()
 			);
 }
 
-function loadOfertaDetalle(id_oferta)
-{
-	var ancho2=$("#mappage").width();
-	WL_QUALIFY=0;
-	ancho=Math.round((ancho2*95)/100);
-	IMG_WIDTH=ancho;
-	IMG_HEIGHT=ancho-((ancho*30)/100);
-	
-	$.mobile.loading( 'show', {
-				text: 'Cargando...',
-				textVisible: true,
-				theme: 'a',
-				html: ""
-			});
-	$("#contendor_contenido").load(PATH_QUERY, 
-			{tipo:13, id_oferta:id_oferta, img_w:IMG_WIDTH, img_h:IMG_HEIGHT, ancho:ancho2} 
-				,function(){
-					
-					$('#contendor_contenido').trigger('create');
-					try
-					{
- 						//startRotator("#rotator");
-        		prepareRotator("#rotator");
-        	}catch(e)
-        	{ 	}
-					$.mobile.loading( 'hide');	
-					
-				}
-			);
-}
+
       function rotateBanners(elem) {
   var active = $(elem+" img.active");
   
@@ -1283,16 +1232,17 @@ function nextRotator(elem) {
   next.addClass("active").fadeIn("slow");
 }
 
-function loadValoracion(valor, stilo,div, stilo)
+function loadValoracion(valor, stilo,div)
 {
 
 	 		$(".valora_estrella_"+div).jRating({
 				length:5,
-				decimalLength:1,
+				decimalLength:0,
 				canRateAgain : true,
 	  		nbRates : 50,
 	  		showRateInfo:false,
-	  		isDisabled : false,
+	  		isDisabled : stilo,
+	  		step:true,
 				/*onSuccess : function(){
 				  alert('Success : your rate has been saved :)');
 				},
@@ -1379,4 +1329,64 @@ function showPaginaCom(pagina)
 	COM_PAGE=pagina;
 	$(".pag_dv").fadeOut("fast");
 	$("#pag_"+pagina).fadeIn("slow");
+}
+
+
+function loadComercioDetalleID(comercio)
+{
+	
+	var ancho_or=$("#mappage").width();
+
+	ancho=Math.round((ancho_or*35)/100);
+	IMG_WIDTH=ancho;
+	IMG_HEIGHT=ancho-10;
+	$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+	$("#contendor_contenido").load(PATH_QUERY, 
+			{tipo:12, comercio:comercio, img_w:IMG_WIDTH, img_h:IMG_HEIGHT, ancho:ancho_or} 
+				,function(){
+					
+					$('#contendor_contenido').trigger('create');
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
+	
+			
+}
+
+
+function loadOfertaDetalle(id_oferta)
+{
+	var ancho2=$("#mappage").width();
+	WL_QUALIFY=0;
+	ancho=Math.round((ancho2*95)/100);
+	IMG_WIDTH=ancho;
+	IMG_HEIGHT=ancho-((ancho*30)/100);
+	
+	$.mobile.loading( 'show', {
+				text: 'Cargando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+	$("#contendor_contenido").load(PATH_QUERY, 
+			{tipo:13, id_oferta:id_oferta, img_w:IMG_WIDTH, img_h:IMG_HEIGHT, ancho:ancho2} 
+				,function(){
+					
+					$('#contendor_contenido').trigger('create');
+					try
+					{
+ 						//startRotator("#rotator");
+        		prepareRotator("#rotator");
+        	}catch(e)
+        	{ 	}
+					$.mobile.loading( 'hide');	
+					
+				}
+			);
 }
