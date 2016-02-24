@@ -706,11 +706,11 @@ function loadMenu(div)
 	
 	var menu ="<div data-role='navbar' id='menuInfer'><ul>";
 	 
-	menu +="		<li><a class='li_a' href='javascript:loadOferta();' data-transition='flow'><img width=50px src='img/ofertas.png'></a></li>";
-	menu +="		<li><a class='li_b' href='javascript:loadComercio();' data-transition='flow'><img width=50px src='img/comercio_dia.png'></a></li>";
-	menu +="		<li><a class='li_a' href='javascript:loadComerciosAsociados();' data-transition='flow'><img width=50px src='img/comercios.png'></a></li>";
-	menu +="		<li><a class='li_b' href='javascript:loadMapa();'><img width=50px src='img/mapa.png'></a></li>";
-	menu +="		<li><a class='li_a' href='javascript:loadBuscador();' data-transition='flow'><img width=50px src='img/buscador.png'></a></li>	";
+	menu +="		<li><a class='li_a' href='javascript:loadOferta();' data-transition='flow'><img width=70px height=70px src='img/ofertas.png'></a></li>";
+	menu +="		<li><a class='li_b' href='javascript:loadComercio();' data-transition='flow'><img width=70px height=70px src='img/comercio_dia.png'></a></li>";
+	menu +="		<li><a class='li_a' href='javascript:loadComerciosAsociados();' data-transition='flow'><img width=70px height=70px src='img/comercios.png'></a></li>";
+	menu +="		<li><a class='li_b' href='javascript:loadMapa();'><img width=70px height=70px src='img/mapa.png'></a></li>";
+	menu +="		<li><a class='li_a' href='javascript:loadBuscador();' data-transition='flow'><img width=70px height=70px src='img/buscador.png'></a></li>	";
 	
 	menu +="</ul></div>";
 	$("#menuNav").html(menu);
@@ -721,11 +721,11 @@ function loadMenuOff()
 
 	var menu ="<div data-role='navbar' id='menuInfer'><ul>";
 	 
-	menu +="		<li><a class='li_a li_opaco' href='#' id='open-popupArrow' class='clickable-area' data-transition='flow'><img width=50px src='img/ofertas.png'></a></li>";
-	menu +="		<li><a class='li_b ' href='javascript:loadComercio();'  href='#' data-transition='flow'><img width=50px src='img/comercio_dia.png'></a></li>";
-	menu +="		<li><a class='li_a' href='javascript:loadComerciosAsociados();' data-transition='flow'><img width=50px src='img/comercios.png'></a></li>";
-	menu +="		<li><a class='li_b' href='javascript:loadMapa();'><img width=50px src='img/mapa.png'></a></li>";
-	menu +="		<li><a class='li_a' href='javascript:loadBuscador();' data-transition='flow'><img width=50px src='img/buscador.png'></a></li>	";
+	menu +="		<li><a class='li_a li_opaco' href='#' id='open-popupArrow' class='clickable-area' data-transition='flow'><img width=70px height=70px src='img/ofertas.png'></a></li>";
+	menu +="		<li><a class='li_b ' href='javascript:loadComercio();'  href='#' data-transition='flow'><img width=70px height=70px src='img/comercio_dia.png'></a></li>";
+	menu +="		<li><a class='li_a' href='javascript:loadComerciosAsociados();' data-transition='flow'><img width=70px height=70px src='img/comercios.png'></a></li>";
+	menu +="		<li><a class='li_b' href='javascript:loadMapa();'><img width=70px height=70px src='img/mapa.png'></a></li>";
+	menu +="		<li><a class='li_a' href='javascript:loadBuscador();' data-transition='flow'><img width=70px height=70px src='img/buscador.png'></a></li>	";
 	menu +="</ul></div>";
 	$("#menuNav").html(menu);
 	$('#menuNav').trigger('create');

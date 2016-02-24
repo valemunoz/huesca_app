@@ -38,7 +38,10 @@
  		$('.body_inicio').css('width',ancho);
  		$('.body_inicio').css('height',alto);
 		}
-     	
+     	$('html, body').on('touchmove', function(e){ 
+     //prevent native touch activity like scrolling
+     e.preventDefault(); 
+});
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
 document.addEventListener("deviceready", deviceListo, false);
@@ -103,20 +106,7 @@ document.addEventListener("deviceready", deviceListo, false);
     		</script>
     	  
  </div>
-<script>
- 			
-	window.fbAsyncInit = function() {
-   
-    FB.init({
-    appId: '171716159685522',
-    nativeInterface: CDV.FB,
-    useCachedDialogs: false
-});
 
-
-    // Additional initialization code such as adding Event Listeners goes here
-  };
-  </script>
     
  		 			<div id=output></div>
     </body>

@@ -32,6 +32,10 @@
  		
  		
 }
+$('html, body').on('touchmove', function(e){ 
+     //prevent native touch activity like scrolling
+     e.preventDefault(); 
+});
 $.mobile.document.on( "click", "#open-popupArrow", function( evt ) {
     $( "#popupArrow" ).popup( "open", { x: evt.pageX, y: evt.pageY } );
     evt.preventDefault();

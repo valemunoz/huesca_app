@@ -27,6 +27,10 @@ $.mobile.document.on( "click", "#open-popupArrow", function( evt ) {
     $( "#popupArrow" ).popup( "open", { x: evt.pageX, y: evt.pageY } );
     evt.preventDefault();
 });
+$('html, body').on('touchmove', function(e){ 
+     //prevent native touch activity like scrolling
+     e.preventDefault(); 
+});
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
 document.addEventListener("deviceready", deviceListoNoSesion, false);
@@ -63,7 +67,7 @@ document.addEventListener("deviceready", deviceListoNoSesion, false);
 						<span>EMAIL</span>
 						<input class=input_form  type="text" id="mail" name="mail" value="" placeholder="EMAIL">
 						<span>CONTRASE&Ntilde;A</span>
-						<input class=input_form  type="password" id="clv" name="clv" value="" placeholder="EMAIL">
+						<input class=input_form  type="password" id="clv" name="clv" value="" placeholder="CONTRASE&Ntilde;A">
 						<span>FECHA NACIMIENTO</span>
 						<input type="date" class=input_form name="fec" id="fec" value="" placeholder="FECHA NACIMIENTO">
 						<select name="sexo" id="sexo" data-native-menu="false">
@@ -75,7 +79,7 @@ document.addEventListener("deviceready", deviceListoNoSesion, false);
 						<input type="checkbox" name="checkbox-1a" id="checkbox-1a" >
     				<label for="checkbox-1a">Acepto las condiciones de uso y protecci&oacute;n de datos.</label>
     				<a href="#mod_condiciones" data-rel="dialog" data-transition="pop">Leer condiciones</a>
-						<div class="boton_css al_right" onclick="validaUsuario();">REGISTRAR </div>
+						<div class="boton_login al_right" onclick="validaUsuario();">REGISTRAR </div>
 					</br></br></br></br>
 					
 					</div>	
@@ -83,9 +87,9 @@ document.addEventListener("deviceready", deviceListoNoSesion, false);
                  
     	</div>
     	<div data-role="footer" data-id="foo1" data-position="fixed" id=foot_page data-tap-toggle="false">
-    		
-
-    	<img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
+<div id="menuNav"></div>
+<hr class="linea" />
+<img height=50px src="img/logo_pie_ayto.png" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
 </div><!-- /footer -->
    
     	
