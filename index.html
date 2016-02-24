@@ -40,10 +40,7 @@ $.mobile.document.on( "click", "#open-popupArrow", function( evt ) {
     $( "#popupArrow" ).popup( "open", { x: evt.pageX, y: evt.pageY } );
     evt.preventDefault();
 });
-$('html, body').on('touchmove', function(e){ 
-     //prevent native touch activity like scrolling
-     e.preventDefault(); 
-});
+
 /*window.onresize = function() {
         var alto=$("#contenido").height();
     var ancho=$("#contenido").width();
@@ -103,11 +100,11 @@ document.addEventListener("deviceready", deviceListoInicio, false);
 			<div data-role="navbar" id="menuInfer">
 				<ul>
 				
-			<li><a class='li_a li_opaco' href="#" id="open-popupArrow" class="clickable-area"><img width=70px height=70px  src="img/ofertas.png"></a></li>
-			<li><a class='li_b' href='javascript:loadComercio();' ><img width=70px height=70px src="img/comercio_dia.png"></a></li>
-			<li><a class='li_a' href="javascript:loadComerciosAsociados();" data-transition="flow"><img width=70px height=70px src="img/comercios.png"></a></li>
-			<li><a class='li_b' href="javascript:loadMapa();"><img width=70px height=70px src="img/mapa.png"></a></li>
-			<li><a class='li_a' href="javascript:loadBuscador();" data-transition="flow"><img width=70px height=70px src="img/buscador.png"></a></li>	
+			<li><a class='li_a li_opaco' href="#" id="open-popupArrow" class="clickable-area"><img class="menu_img"  src="img/ofertas.png"></a></li>
+			<li><a class='li_b' href='javascript:loadComercio();' ><img class="menu_img" src="img/comercio_dia.png"></a></li>
+			<li><a class='li_a' href="javascript:loadComerciosAsociados();" data-transition="flow"><img class="menu_img" src="img/comercios.png"></a></li>
+			<li><a class='li_b' href="javascript:loadMapa();"><img class="menu_img" src="img/mapa.png"></a></li>
+			<li><a class='li_a' href="javascript:loadBuscador();" data-transition="flow"><img class="menu_img" src="img/buscador.png"></a></li>	
 				</ul>
 			</div><!-- /navbar -->
 			<hr class="linea" />

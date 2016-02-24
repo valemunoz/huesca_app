@@ -222,6 +222,10 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	font-size:9px !important;
 	margin-left:2px;
 }
+.menu_img
+{
+	width:40px !important;
+}
 /*#titulo_div
 {
 	opacity: 0.99 !important;
@@ -272,6 +276,10 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	font-size:10px !important;
 	margin-left:2px;
 }
+.menu_img
+{
+	width:50px !important;
+}
 }
 
 @media  (min-width: 501px)
@@ -300,6 +308,10 @@ src: url('ostrich/ostrich-light.ttf') !important;
 	margin-top:9px !important;
 	font-size:11px !important;
 	margin-left:2px;
+}
+.menu_img
+{
+	width:70px !important;
 }
 }
 
@@ -981,3 +993,4 @@ border-radius: 20px;
 .clickable-area:focus {
     outline: 0;
 }
+
