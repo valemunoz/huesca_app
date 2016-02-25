@@ -11,14 +11,14 @@
 	
 	
 	height:90% !important;
-	font-size:140% !important;
+	font-size:120% !important;
 	/*height:80% !important;
 	position:absolute;*/
 }
 #mappageIni
 {
 	overflow-x:hidden !important;
-	
+	font-size:120% !important;
 	
 
 	font-size:12px;
