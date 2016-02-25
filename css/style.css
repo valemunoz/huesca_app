@@ -219,7 +219,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 {
 	float:left !important;
 	margin-top:9px !important;
-	font-size:9px !important;
+	font-size:11px !important;
 	margin-left:2px;
 }
 .menu_img
@@ -273,7 +273,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 {
 	float:left !important;
 	margin-top:9px !important;
-	font-size:10px !important;
+	font-size:12px !important;
 	margin-left:2px;
 }
 .menu_img
@@ -306,7 +306,7 @@ src: url('ostrich/ostrich-light.ttf') !important;
 {
 	float:left !important;
 	margin-top:9px !important;
-	font-size:11px !important;
+	font-size:13px !important;
 	margin-left:2px;
 }
 .menu_img
@@ -881,7 +881,7 @@ color: #6D0135 !important;
 }
 
 .fondo_login{
-	width:95% !important;
+	width:90% !important;
 	margin:0 auto;
 	   background-color: #7FE0E1;
     padding: 1% 2%;
@@ -994,3 +994,28 @@ border-radius: 20px;
     outline: 0;
 }
 
+.txt_hide
+{
+	display:none;
+}
+.img_det
+{
+	float:right !important;
+}
+.txt_just
+{
+	text-align:justify !important;
+}
+
+.boton_volver{
+background-color:#9A1E19;   padding: 1%;
+font-size:0.9em;
+color: white !important;
+float:right;
+ text-decoration:none;
+ display:block;
+clear:both;
+}
+.boton_volver:hover{   
+text-decoration:underline;
+}

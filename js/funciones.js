@@ -29,13 +29,25 @@ var COM_PAGE=1;
 var COM_REG_PAG=0;
 var CM_MIGA=0;
 var CM_MIGA_ID=0;
+var CM_MIGA_QRY=0;
 $(window).load(function(){
 	$( "#contenido" ).click(function() {
+		
   
   $("#menuInfer").fadeToggle("slow");
 
   $(".linea").fadeToggle("slow");
 });
+try
+{
+$( "#mappage_ses" ).click(function() {
+		
+  
+  $("#menuInfer").fadeToggle("slow");
+
+  $(".linea").fadeToggle("slow");
+});
+}catch(e){}
 /*$(document).bind("pageinit", function() {
    $("[data-role=footer]").fixedtoolbar({ tapToggle: true });
    $("[data-role=footer]").fixedtoolbar({ fullscreen: true });
@@ -1304,7 +1316,7 @@ function validaRecuper()
 				theme: 'a',
 				html: ""
 			});
-			$("#output").load(PATH_QUERY, 
+			$("#aqui").load(PATH_QUERY, 
 			{tipo:15, mail:mail} 
 				,function(){				
 					
@@ -1389,4 +1401,49 @@ function loadOfertaDetalle(id_oferta)
 					
 				}
 			);
+}
+function migas(origen,id,query)
+{
+	CM_MIGA=origen;
+	CM_MIGA_ID=id;
+	CM_MIGA_QRY=query;
+	
+	
+}
+function migasSimple(origen,id)
+{
+	CM_MIGA=origen;
+	CM_MIGA_ID=id;
+	CM_MIGA_QRY=query;
+	
+	
+}
+function loadMigas()
+{
+	
+	if(CM_MIGA==1)
+	{
+		loadOferta();	
+	}
+	if(CM_MIGA==2)
+	{
+		loadComercio();	
+	}
+	
+	if(CM_MIGA==3)
+	{
+		loadComerciosAsociados();	
+	}
+	if(CM_MIGA==4)
+	{
+		loadMapa();	
+	}
+	if(CM_MIGA==5)
+	{
+		loadBuscador();	
+	}
+	if(CM_MIGA==6)
+	{
+		loadOfertaDetalle(CM_MIGA_ID);
+	}
 }
