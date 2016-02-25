@@ -11,6 +11,7 @@
 	
 	
 	height:90% !important;
+	font-size:12px;
 	/*height:80% !important;
 	position:absolute;*/
 }
@@ -985,13 +986,13 @@ border-radius: 20px;
 	display:none;
 }
 .clickable-area {
-    display: block;
-    width: 100%;
-    height: 300px;
-    background-color: #ffefef;
+Â Â Â Â display: block;
+Â Â Â Â width: 100%;
+Â Â Â Â height: 300px;
+Â Â Â Â background-color: #ffefef;
 }
 .clickable-area:focus {
-    outline: 0;
+Â Â Â Â outline: 0;
 }
 
 .txt_hide
