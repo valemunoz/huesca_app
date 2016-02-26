@@ -1407,6 +1407,25 @@ function migas(origen,id,query)
 	CM_MIGA=origen;
 	CM_MIGA_ID=id;
 	CM_MIGA_QRY=query;
+	if(origen==3)
+	{
+		$("#output").load(PATH_QUERY, 
+			{tipo:16, pagina:CM_MIGA_ID} 
+				,function(){
+					
+					
+				}
+			);		
+	}else
+		{
+			$("#output").load(PATH_QUERY, 
+			{tipo:16, pagina:0} 
+				,function(){
+					
+					
+				}
+			);		
+		}
 	
 	
 }
@@ -1414,7 +1433,7 @@ function migasSimple(origen,id)
 {
 	CM_MIGA=origen;
 	CM_MIGA_ID=id;
-	CM_MIGA_QRY=query;
+
 	
 	
 }
