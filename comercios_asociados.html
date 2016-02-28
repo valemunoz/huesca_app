@@ -50,7 +50,7 @@
 					
 					</div>
 				
-				<img src="img/fondo.png" class="body_inicio">
+				<!--img src="img/fondo.png" class="body_inicio"-->
 				<div class="ui-bar ui-bar-a" id=barra_sup style="text-align:right;">
 						  		
 						  			<span id="barra_izq"></span>
@@ -89,7 +89,7 @@
 <img height=50px src="img/logo_pie_ayto.jpg" >
 </div><!-- /footer -->
 <script>
-		window.onload = function() {
+		/*window.onload = function() {
     var alto=$("#contenido").height();
     var ancho=$("#contenido").width();
     alto=alto - (alto *15/100);
@@ -97,7 +97,7 @@
  		$('.body_inicio').css('height',alto);
  		
  		
-}
+}*/
 $.mobile.document.on( "click", "#open-popupArrow", function( evt ) {
     $( "#popupArrow" ).popup( "open", { x: evt.pageX, y: evt.pageY } );
     evt.preventDefault();
@@ -106,7 +106,7 @@ $.mobile.document.on( "click", "#open-popupArrow", function( evt ) {
 document.addEventListener("offline", offline, false);
 document.addEventListener("online", online, false);
 document.addEventListener("deviceready", deviceListoNoSesion, false);
-getSesionPHP(3);
+
 </script>
 <script>
 	

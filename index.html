@@ -25,20 +25,18 @@
    			      
    			
 <script>
-	window.onload = function() {
+	/*window.onload = function() {
     var alto=$("#contenido").height();
     var ancho=$("#contenido").width();
     //alto=alto - (alto *15/100);
-
-    alto=(alto *80)/100;
-
+    alto=(alto *90)/100;
  		$('.body_inicio').css('width',ancho);
  		$('.body_inicio').css('height',alto);
  		var alto_h=$("#header_fondo").height();
 		/*$('.fondo_h').css('width',ancho);*/
  		//$('.fondo_h').css('height',alto_h);
  		
-}
+}*/
 $.mobile.document.on( "click", "#open-popupArrow", function( evt ) {
     $( "#popupArrow" ).popup( "open", { x: evt.pageX, y: evt.pageY } );
     evt.preventDefault();
@@ -75,7 +73,7 @@ document.addEventListener("deviceready", deviceListoInicio, false);
 					
 					</div>
 				
-				<img src="img/fondo.png" class="body_inicio">
+				<!--img src="img/fondo.png" class="body_inicio"-->
 				<div id="fondo">
 					<div id="div_logo">
 						<a onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });"><img class="logo_prin" src="img/logo.png" width=30%></a>
@@ -92,7 +90,7 @@ document.addEventListener("deviceready", deviceListoInicio, false);
 						
 					</div>			
 					
-					<br>
+				
 					
 				</div>
        
@@ -111,7 +109,7 @@ document.addEventListener("deviceready", deviceListoInicio, false);
 				</ul>
 			</div><!-- /navbar -->
 			<hr class="linea" />
-    	V12<img height=50px src="img/logo_pie_ayto.jpg" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
+    	V13<img height=50px src="img/logo_pie_ayto.jpg" onclick="navigator.app.loadUrl('http://www.huesca.es/', { openExternal:true });">
 		</div><!-- /footer -->
  </div>
 

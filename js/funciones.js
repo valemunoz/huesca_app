@@ -471,7 +471,7 @@ var ancho=$("#mappage").width();
 				$("#centro_cont").load(PATH_QUERY, 
 			{tipo:2, img_h:IMG_HEIGHT, img_w:IMG_WIDTH} 
 				,function(){
-					$('#resultado').trigger('create');
+					$('#centro_cont').trigger('create');
 					setTimeout("$.mobile.loading( 'hide');	",1000);
 					
 				}
@@ -1465,4 +1465,17 @@ function loadMigas()
 	{
 		loadOfertaDetalle(CM_MIGA_ID);
 	}
+}
+
+function showPag()
+{
+	
+	$(".pag_hide").fadeToggle("slow");
+	if($("#pagMas").html()=="Mas...")
+	{
+		$("#pagMas").html("Menos");
+	}else
+		{
+			$("#pagMas").html("Mas...");	
+		}
 }
