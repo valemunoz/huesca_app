@@ -39,6 +39,7 @@ $(window).load(function(){
 
   $(".linea").fadeToggle("slow");
 });
+
 try
 {
 $( "#mappage_ses" ).click(function() {
