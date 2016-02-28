@@ -1,5 +1,6 @@
 var map;
-var PATH_QUERY="http://desarrollo.chilemap.cl/huesca/query.php";
+//var PATH_QUERY="http://desarrollo.chilemap.cl/huesca/query.php";
+PATH_QUERY="http://comerciohuescaphp.e-osca.com/query.php";
 var ONLINE=100;
 var offl=false;
 var _wsUrl = "http://comerciohuescaws.e-osca.com/WebService.asmx";
