@@ -169,7 +169,7 @@ background: url("../img/fondo.png")  no-repeat fixed center !important;
 @media (max-width: 500px) and (min-width: 251px) {
 	#mappage
 {
-	font-size:50% !important;
+	font-size:90% !important;
 		
 }
 #rig_img
@@ -215,7 +215,7 @@ background: url("../img/fondo.png")  no-repeat fixed center !important;
 @media (min-width: 501px) {
 	#mappage
 {
-	font-size: 18px!important;
+	font-size: 125% !important;
 		
 }
 #rig_img
